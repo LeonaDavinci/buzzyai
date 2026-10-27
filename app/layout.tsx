@@ -6,14 +6,14 @@ const GA_ID = "G-KJ4CMGF5QB";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://buzzyai.video"),
-  applicationName: "buzzy",
-  // Every subpage title picks up the standalone brand token "buzzy".
+  applicationName: "BuzzyAI.Video",
   title: {
-    default: "Buzzy AI Video - Director | Buzzy : Pro Video Engine for you",
-    template: "%s | buzzy",
+    default:
+      "BuzzyAI.Video - AI Video Director | Storyboard, Camera & Relighting in One Canvas",
+    template: "%s | BuzzyAI.Video",
   },
   description:
-    "Buzzy is a pro AI video engine: Buzzy AI Video aggregates Seedance, Kling, Runway, Veo and more into one canvas, with storyboard, multi-angle camera control and real-time relighting so anyone can direct 4K cinematic shorts, animations and music videos.",
+    "BuzzyAI.Video is an AI video directing workspace: it aggregates Seedance, Kling, Runway, Veo and more into one canvas, with storyboard, multi-angle camera control and real-time relighting so anyone can direct 4K cinematic shorts, animations and music videos.",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -23,12 +23,8 @@ export const metadata: Metadata = {
   },
   manifest: "/manifest.webmanifest",
   keywords: [
-    "buzzy",
-    "buzzy AI",
-    "buzzy video",
-    "buzzy AI video",
-    "buzzy AI video generator",
-    "buzzy director canvas",
+    "buzzyai.video",
+    "buzzyai",
     "AI video generator",
     "AI director",
     "text to video",
@@ -40,20 +36,20 @@ export const metadata: Metadata = {
     "AI animation",
     "AI music video",
   ],
-  authors: [{ name: "buzzy" }],
+  authors: [{ name: "BuzzyAI.Video" }],
   openGraph: {
-    title: "Buzzy AI Video - Your AI Director",
+    title: "BuzzyAI.Video - AI Video Director",
     description:
-      "Buzzy is the multi-model AI video engine where you storyboard, direct the camera and relight shots in one canvas, then export 4K films in your browser.",
+      "BuzzyAI.Video is the multi-model AI video directing workspace where you storyboard, direct the camera and relight shots in one canvas, then export 4K films in your browser.",
     type: "website",
     url: "https://buzzyai.video",
-    siteName: "buzzy",
+    siteName: "BuzzyAI.Video",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Buzzy AI Video - Your AI Director",
+    title: "BuzzyAI.Video - AI Video Director",
     description:
-      "Buzzy aggregates Seedance, Kling, Runway and Veo, so you can direct a consistent 4K AI film from a single storyboard canvas.",
+      "BuzzyAI.Video aggregates Seedance, Kling, Runway and Veo, so you can direct a consistent 4K AI film from a single storyboard canvas.",
   },
 };
 

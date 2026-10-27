@@ -1,7 +1,7 @@
 {
-  "name": "Buzzy AI Video",
-  "short_name": "Buzzy AI",
-  "description": "Your AI Director | Pro Video Engine for Everyone",
+  "name": "BuzzyAI.Video",
+  "short_name": "BuzzyAI",
+  "description": "AI Video Director | Storyboard, Camera & Relighting in One Canvas",
   "icons": [
     { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
     { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }

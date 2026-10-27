@@ -18,34 +18,6 @@ export const models: ModelItem[] = [
   { name: "Pixverse", desc: "Stylized & dynamic video" },
 ];
 
-export interface Work {
-  title: string;
-  author: string;
-  tag: string;
-  hue: number;
-}
-
-export const films: Work[] = [
-  { title: "Backroom", author: "The Last Key", tag: "AI Film", hue: 28 },
-  { title: "Before Rome Sunset", author: "Roman", tag: "AI Film", hue: 18 },
-  { title: "Pink Lemon", author: "El", tag: "AI Film", hue: 340 },
-  { title: "Beyond the Moment", author: "Y1-B0", tag: "AI Film", hue: 210 },
-  { title: "The Essence of Chairs", author: "Lucas", tag: "AI Film", hue: 42 },
-  { title: "Kani Studio", author: "Kani", tag: "AI Film", hue: 8 },
-];
-
-export const animations: Work[] = [
-  { title: "Neomorph", author: "Studio N", tag: "Animation", hue: 265 },
-  { title: "Liquid Forms", author: "Aria", tag: "Animation", hue: 190 },
-  { title: "Paper City", author: "Momo", tag: "Animation", hue: 150 },
-];
-
-export const mvExplainer: Work[] = [
-  { title: "BeatMaster", author: "Rap", tag: "MV", hue: 300 },
-  { title: "BioLearn", author: "Dance", tag: "MV", hue: 170 },
-  { title: "Geosmin Facts", author: "SciShow", tag: "Explainer", hue: 48 },
-];
-
 export interface Tool {
   title: string;
   desc: string;
@@ -137,7 +109,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "Can I use it without any filmmaking background?",
-    a: "Yes. Buzzy AI Video acts as your AI director. With storyboard generation, visual camera control, and real-time lighting, anyone can produce cinematic shorts.",
+    a: "Yes. BuzzyAI.Video acts as your AI director. With storyboard generation, visual camera control, and real-time lighting, anyone can produce cinematic shorts.",
   },
   {
     q: "Do you support text-to-video and image-to-video?",
@@ -220,7 +192,7 @@ export interface Testimonial {
 export const testimonials: Testimonial[] = [
   {
     quote:
-      "Buzzy AI Video replaced three tools in my pipeline. The storyboard + camera control finally let me direct instead of just prompting.",
+      "BuzzyAI.Video replaced three tools in my pipeline. The storyboard + camera control finally let me direct instead of just prompting.",
     name: "Maya R.",
     role: "Independent Filmmaker",
   },
@@ -256,9 +228,9 @@ export interface VideoWork {
 
 export const videoWorks: VideoWork[] = [
   {
-    slug: "backroom",
-    title: "Backroom",
-    author: "The Last Key",
+    slug: "ember-lane",
+    title: "Ember Lane",
+    author: "Nocturne",
     tag: "AI Film",
     image: "/works/backroom.png",
     duration: "1:48",
@@ -266,14 +238,14 @@ export const videoWorks: VideoWork[] = [
     createdAt: "2026-08",
     views: "24.6K",
     description:
-      "A descent through endless liminal corridors where the lights never quite steady. Every hallway was blocked in the Storyboard Creator first, so the concrete geometry, the flicker cadence and the camera height stay locked across all 38 cuts.",
+      "A lamplighter walks a smoldering side street while cinders drift like slow snow. The lane geometry and ember cadence were blocked shot-by-shot in the Storyboard Creator, so all 30+ cuts share one continuous mood.",
     prompt:
-      "A tense liminal backrooms corridor, flickering yellow fluorescent lights, worn concrete walls, eerie abandoned mood, cinematic 35mm grain, widescreen.",
+      "A quiet cobblestone side street at night, drifting orange embers, warm lantern pools of light, gentle smoke haze, cinematic 35mm grain, widescreen.",
   },
   {
-    slug: "before-rome-sunset",
-    title: "Before Rome Sunset",
-    author: "Roman",
+    slug: "glass-harbor",
+    title: "Glass Harbor",
+    author: "Mira Voss",
     tag: "AI Film",
     image: "/works/before-rome-sunset.png",
     duration: "2:12",
@@ -281,14 +253,14 @@ export const videoWorks: VideoWork[] = [
     createdAt: "2026-07",
     views: "18.2K",
     description:
-      "Two silhouettes walk the last mile of empire as the sun rakes across weathered stone. Real-time relighting kept the golden-hour key consistent from the opening wide shot to the final close-up on the dust.",
+      "Fishing boats of translucent glass glide into a harbor at last light. Real-time relighting kept the low sun key consistent from the opening aerial to the final hull close-up.",
     prompt:
-      "Golden hour over ancient Roman ruins, warm sunset light across stone columns, two distant silhouettes, dramatic orange and violet sky, filmic grading.",
+      "Translucent glass fishing boats entering a calm harbor at sunset, warm amber reflections on water, distant lighthouse, dramatic orange and violet sky, filmic grading.",
   },
   {
-    slug: "pink-lemon",
-    title: "Pink Lemon",
-    author: "El",
+    slug: "copper-season",
+    title: "Copper Season",
+    author: "Juniper Ray",
     tag: "AI Film",
     image: "/works/pink-lemon.png",
     duration: "0:58",
@@ -296,14 +268,14 @@ export const videoWorks: VideoWork[] = [
     createdAt: "2026-09",
     views: "31.9K",
     description:
-      "A surreal pastel dreamscape built as a fashion-editorial piece — a giant glossy lemon drifting through cream mist while ribbons trail in soft focus. Camera moves were choreographed on the Director Canvas cube before a single frame was rendered.",
+      "A surreal autumn fable — copper leaves fall upward through pastel mist while a fox watches from a paper moon. Camera choreography was staged on the Director Canvas cube before rendering.",
     prompt:
-      "Surreal pastel dreamscape, giant glossy pink lemon floating in cream mist, whimsical fashion-editorial mood, delicate drifting ribbons, ethereal lighting.",
+      "Surreal pastel autumn scene, copper leaves floating upward through cream mist, a fox on a paper moon, whimsical storybook mood, ethereal soft lighting.",
   },
   {
-    slug: "neomorph",
-    title: "Neomorph",
-    author: "Studio N",
+    slug: "signal-bloom",
+    title: "Signal Bloom",
+    author: "Atelier K",
     tag: "Animation",
     image: "/works/neomorph.png",
     duration: "1:05",
@@ -311,14 +283,14 @@ export const videoWorks: VideoWork[] = [
     createdAt: "2026-06",
     views: "42.7K",
     description:
-      "A sleek bioluminescent creature rendered in stylized 3D. Character and material references were pinned in the storyboard so the neon-blue veins read identically in every angle of the turntable.",
+      "A radio antenna blossoms into a luminous mechanical flower each midnight. Material and glow references were pinned in the storyboard so the petal shader reads identically from every turntable angle.",
     prompt:
-      "Sleek bioluminescent alien creature, translucent skin, glowing neon-blue and violet veins, dark sci-fi environment, stylized 3D render, moody atmosphere.",
+      "Mechanical flower blooming from a vintage radio antenna, glowing teal and violet petals, dark midnight rooftop, stylized 3D render, moody atmosphere.",
   },
   {
-    slug: "liquid-forms",
-    title: "Liquid Forms",
-    author: "Aria",
+    slug: "vessel-of-light",
+    title: "Vessel of Light",
+    author: "Hana Ito",
     tag: "Animation",
     image: "/works/liquid-forms.png",
     duration: "0:42",
@@ -326,14 +298,14 @@ export const videoWorks: VideoWork[] = [
     createdAt: "2026-08",
     views: "15.3K",
     description:
-      "Abstract flowing liquid-metal sculpture with chrome and iridescent reflections. A minimal dark studio was relit in real time to push the oil-slick highlights without blowing out the curves.",
+      "A ceramic vessel pours liquid light instead of water, folding reflections into itself. A minimal dark studio was relit in real time to shape the highlights without clipping the curves.",
     prompt:
-      "Abstract flowing liquid-metal sculpture, chrome and iridescent oil-slick reflections, minimal dark studio lighting, smooth organic curves, elegant futuristic 3D render.",
+      "Ceramic vessel pouring glowing liquid light, iridescent reflections folding in a minimal dark studio, smooth organic curves, elegant futuristic 3D render.",
   },
   {
-    slug: "beatmaster",
-    title: "BeatMaster",
-    author: "Rap",
+    slug: "midnight-frequency",
+    title: "Midnight Frequency",
+    author: "DJ Halo",
     tag: "MV",
     image: "/works/beatmaster.png",
     duration: "3:24",
@@ -341,14 +313,14 @@ export const videoWorks: VideoWork[] = [
     createdAt: "2026-09",
     views: "58.1K",
     description:
-      "An energetic neon concert cut synced to the drop. The dancer silhouette and light beams were locked to the beat map in the storyboard, then the multi-angle camera control timed every whip-pan to the snare.",
+      "A rooftop radio set synced to the bassline. The crowd silhouettes and antenna light beams were locked to the beat map in the storyboard, then multi-angle camera control timed every push-in to the kick.",
     prompt:
-      "Energetic neon-lit concert stage, dancer silhouette mid-movement, magenta and cyan stage lights, volumetric haze, motion-blurred light beams, vibrant club atmosphere.",
+      "Rooftop late-night radio set, crowd silhouettes under magenta and cyan beams, antenna glowing against the skyline, volumetric haze, vibrant club atmosphere.",
   },
   {
-    slug: "beyond-the-moment",
-    title: "Beyond the Moment",
-    author: "Y1-B0",
+    slug: "cartographers-daughter",
+    title: "The Cartographer's Daughter",
+    author: "Wren",
     tag: "AI Film",
     image: "/works/beyond-the-moment.png",
     duration: "2:05",
@@ -356,14 +328,14 @@ export const videoWorks: VideoWork[] = [
     createdAt: "2026-09",
     views: "22.8K",
     description:
-      "A lone figure waits on a fog-shrouded platform while the city glows in the distance. The Storyboard Creator locked the train-station geography so every reverse angle matched, and the Director Canvas pushed the camera through the haze.",
+      "A girl redraws the coastline of a fading map and the world outside her window obeys. The map room geography was locked in the Storyboard Creator so every reverse angle matched, and the Director Canvas pushed the camera through candle haze.",
     prompt:
-      "Lone hooded figure on a foggy abandoned train platform at blue hour, distant city lights, melancholic atmosphere, cinematic 35mm grain, widescreen, muted teal and amber grading.",
+      "Girl drawing a glowing coastline on an old map in a candlelit map room, ink lines turning real outside the window, melancholic wonder, cinematic 35mm grain, muted teal and amber grading.",
   },
   {
-    slug: "paper-city",
-    title: "Paper City",
-    author: "Momo",
+    slug: "terracotta-sky",
+    title: "Terracotta Sky",
+    author: "Studio Parable",
     tag: "Animation",
     image: "/works/paper-city.png",
     duration: "1:33",
@@ -371,14 +343,14 @@ export const videoWorks: VideoWork[] = [
     createdAt: "2026-07",
     views: "19.4K",
     description:
-      "A charming miniature metropolis built from folded paper. Stop-motion timing and paper textures were preserved shot-to-shot by pinning material references inside the storyboard panels.",
+      "A clay village bakes under a kiln-orange sky while potters fly kites between chimneys. Stop-motion timing and clay textures were preserved shot-to-shot by pinning material references inside the storyboard panels.",
     prompt:
-      "Charming miniature city made of folded paper and cardboard, tiny moving cars and trees, soft warm daylight, stop-motion style, gentle depth of field, cozy pastel tones.",
+      "Charming clay village with terracotta rooftops under a kiln-orange sky, tiny flying kites, soft warm daylight, stop-motion style, gentle depth of field, cozy earthy tones.",
   },
   {
-    slug: "biolearn",
-    title: "BioLearn",
-    author: "Dance",
+    slug: "chorus-of-cells",
+    title: "Chorus of Cells",
+    author: "Nova Lab",
     tag: "MV",
     image: "/works/biolearn.png",
     duration: "4:01",
@@ -386,8 +358,8 @@ export const videoWorks: VideoWork[] = [
     createdAt: "2026-08",
     views: "36.2K",
     description:
-      "A futuristic explainer-music video where a holographic biology cell pulses to the beat. Neon particles and DNA strands were layered in real time so the visuals never fight the vocal hook.",
+      "An audio-reactive choir of glowing cells sings the vocal hook. Neon membrane pulses were layered in real time so the visuals never fight the melody.",
     prompt:
-      "Futuristic educational scene with a glowing holographic biology cell, neon data particles and DNA helix, clean dark tech aesthetic, cyan and magenta accents, widescreen.",
+      "Audio-reactive glowing cells singing in a dark void, neon membrane pulses, cyan and magenta bioluminescence, clean dark tech aesthetic, widescreen.",
   },
 ];

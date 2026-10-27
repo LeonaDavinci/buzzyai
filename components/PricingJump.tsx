@@ -1,9 +1,12 @@
 "use client";
 
+import Link from "next/link";
 import type { ReactNode } from "react";
 
-const PRICING_URL = "https://www.buzzy.now/pricing";
-
+/**
+ * Internal CTA button — jumps to this site's own pricing section.
+ * (Never link to third-party pricing pages: that reads as impersonation.)
+ */
 export default function PricingJump({
   className = "btn btn-primary",
   children,
@@ -12,14 +15,8 @@ export default function PricingJump({
   children: ReactNode;
 }) {
   return (
-    <button
-      type="button"
-      className={className}
-      onClick={() => {
-        window.location.href = PRICING_URL;
-      }}
-    >
+    <Link href="/#pricing" className={className}>
       {children}
-    </button>
+    </Link>
   );
 }

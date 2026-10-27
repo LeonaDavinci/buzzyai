@@ -16,14 +16,12 @@ export function generateMetadata({
   params: { slug: string };
 }): Metadata {
   const w = videoWorks.find((x) => x.slug === params.slug);
-  if (!w) return { title: "Work not found · buzzy AI video" };
+  if (!w) return { title: "Work not found · BuzzyAI.Video" };
   return {
-    title: `${w.title} — ${w.author} · buzzy AI video`,
+    title: `${w.title} — ${w.author} · BuzzyAI.Video`,
     description: w.description,
     keywords: [
-      "buzzy",
-      "buzzy AI video",
-      "buzzy AI",
+      "buzzyai.video works",
       `${w.title} AI video`,
       "AI short film",
       w.tag,

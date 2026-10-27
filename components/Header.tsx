@@ -7,7 +7,7 @@ export default function Header() {
         <a href="/" className={styles.logo}>
           <span className={styles.logoMark}>◐</span>
           <span className={styles.logoText}>
-            Buzzy AI <span className="gold">Video</span>
+            BuzzyAI<span className="gold">.Video</span>
           </span>
         </a>
         <nav className={styles.nav}>

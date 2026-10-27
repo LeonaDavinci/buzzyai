@@ -5,13 +5,12 @@ import DirectorCanvasApp from "@/components/DirectorCanvasApp";
 import styles from "./director.module.css";
 
 export const metadata: Metadata = {
-  title: "Director Canvas - Buzzy AI Video | Direct animation & generate video",
+  title:
+    "Director Canvas - BuzzyAI.Video | Direct animation & generate video",
   description:
-    "Buzzy's Director Canvas is a browser-based Web UI to direct animation: write a script, build a storyboard, control camera and lighting, and generate 4K video with any leading model.",
+    "The BuzzyAI.Video Director Canvas is a browser-based Web UI to direct animation: write a script, build a storyboard, control camera and lighting, and generate 4K video with any leading model.",
   keywords: [
-    "buzzy",
-    "buzzy director canvas",
-    "buzzy AI video",
+    "buzzyai.video director canvas",
     "director canvas",
     "AI storyboard",
     "camera control AI video",
@@ -53,16 +52,16 @@ export default function DirectorPage() {
               Generate video.
             </h1>
             <p className={styles.sub}>
-              Buzzy's Director Canvas is a browser-based Web UI that turns a
-              sentence into a directed, lit, camera-aware clip. No timeline, no
-              render farm, just you and the canvas.
+              The BuzzyAI.Video Director Canvas is a browser-based Web UI that
+              turns a sentence into a directed, lit, camera-aware clip. No
+              timeline, no render farm, just you and the canvas.
             </p>
             <a href="#canvas" className="btn btn-primary">
               Jump into the canvas
             </a>
             <img
               src="/director-canvas.gif"
-              alt="Buzzy AI Video Director Canvas demo"
+              alt="BuzzyAI.Video Director Canvas demo"
               className={styles.heroGif}
             />
           </div>

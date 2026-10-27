@@ -7,14 +7,13 @@ export default function Hero() {
       <div className={`container ${styles.inner}`}>
         <span className="eyebrow">Creative Agent for storytelling</span>
         <h1 className={styles.title}>
-          <span className="gold">Buzzy :</span> Direct with a{" "}
-          <span className={styles.goldSoft}>storyboard</span>
+          <span className="gold">BuzzyAI.Video</span>
           <br />
-          that stays consistent
+          Direct with a storyboard that stays consistent
         </h1>
         <p className={styles.sub}>
-          Buzzy is the simplest ComfyUI-style canvas for directors: drop an
-          image, generate a multi-cam storyboard, and render consistent clips
+          BuzzyAI.Video is the simplest ComfyUI-style canvas for directors: drop
+          an image, generate a multi-cam storyboard, and render consistent clips
           where characters, objects, and locations stay locked across every
           shot.
         </p>

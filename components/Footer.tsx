@@ -43,11 +43,11 @@ export default function Footer() {
       <div className={`container ${styles.top}`}>
         <div className={styles.brand}>
           <a href="/" className={styles.logo}>
-            <span className="gold">◐</span> Buzzy AI{" "}
-            <span className="gold">Video</span>
+            <span className="gold">◐</span> BuzzyAI
+            <span className="gold">.Video</span>
           </a>
           <p className={styles.tagline}>
-            The pro AI video engine for everyone.
+            Direct consistent AI video in your browser.
             <br />
             Every idea deserves to be filmed.
           </p>
@@ -65,8 +65,8 @@ export default function Footer() {
       </div>
       <div className="divider" />
       <div className={`container ${styles.bottom}`}>
-        <span>© 2026 Buzzy. All rights reserved.</span>
-        <span>Pro Video Engine for Everyone</span>
+        <span>© 2026 BuzzyAI.Video. All rights reserved.</span>
+        <span>Direct consistent AI video</span>
       </div>
     </footer>
   );

@@ -38,7 +38,7 @@ export default function DirectorCanvas() {
           <div className={styles.visual}>
             <img
               src="/director-canvas.gif"
-              alt="Buzzy AI Video Director Canvas demo showing storyboard, camera and lighting controls generating a clip"
+              alt="BuzzyAI.Video Director Canvas demo showing storyboard, camera and lighting controls generating a clip"
               className={styles.gif}
             />
           </div>
