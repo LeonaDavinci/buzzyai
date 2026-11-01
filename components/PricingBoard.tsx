@@ -17,7 +17,11 @@ export default function PricingBoard() {
   const showYearly = billing === "yearly" && plan.priceYearly;
   const price = showYearly ? plan.priceYearly! : plan.priceMonthly;
   const original = billing === "monthly" ? plan.priceYearly : plan.priceMonthly;
-  const checkoutHref = plan.checkoutUrl ?? plan.href ?? "#";
+  // Paid plans route through the /payment landing page so we can track intent;
+  // free plan (no checkoutUrl) falls back to its signup destination.
+  const checkoutHref = plan.checkoutUrl
+    ? `/payment?plan=${plan.name.toLowerCase()}`
+    : plan.href ?? "#";
 
   const scrollToCheckout = () => {
     document.getElementById("checkout")?.scrollIntoView({ behavior: "smooth" });
@@ -183,8 +187,6 @@ export default function PricingBoard() {
             <a
               href={checkoutHref}
               className={`btn btn-primary ${styles.payBtn}`}
-              target={plan.checkoutUrl ? "_blank" : undefined}
-              rel={plan.checkoutUrl ? "noopener noreferrer" : undefined}
             >
               {plan.checkoutUrl ? "Continue to secure checkout" : plan.cta}
             </a>
