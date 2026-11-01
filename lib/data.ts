@@ -61,6 +61,9 @@ export interface Plan {
  * (Set NEXT_PUBLIC_STRIPE_CREATOR_URL at build to override the placeholder.)
  */
 export const CHECKOUT = {
+  starter:
+    process.env.NEXT_PUBLIC_STRIPE_STARTER_URL ??
+    "https://buy.stripe.com/your-starter-subscription-link",
   creator:
     process.env.NEXT_PUBLIC_STRIPE_CREATOR_URL ??
     "https://buy.stripe.com/your-creator-subscription-link",
@@ -70,7 +73,8 @@ export const CHECKOUT = {
 export const plans: Plan[] = [
   {
     name: "Starter",
-    priceMonthly: "$0",
+    priceMonthly: "$1",
+    priceYearly: "$1",
     unit: "/mo",
     desc: "For first-time AI video creators.",
     features: [
@@ -79,8 +83,9 @@ export const plans: Plan[] = [
       "Core model access",
       "Community support",
     ],
-    cta: "Start free",
-    href: "/director",
+    cta: "Get started",
+    href: "/pricing#checkout",
+    checkoutUrl: CHECKOUT.starter,
   },
   {
     name: "Creator",
