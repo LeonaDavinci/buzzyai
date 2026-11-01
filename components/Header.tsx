@@ -17,7 +17,7 @@ export default function Header() {
           <a href="/#tools">Creative Tools</a>
           <a href="/skills">Skills</a>
           <a href="/blog">Blog</a>
-          <a href="/#pricing">Pricing</a>
+          <a href="/pricing">Pricing</a>
           <a href="/#faq">FAQ</a>
         </nav>
         <div className={styles.actions}>

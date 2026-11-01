@@ -51,8 +51,21 @@ export interface Plan {
   features: string[];
   featured?: boolean;
   cta: string;
-  href?: string; // CTA destination; replace with your Stripe / Lemonsqueezy checkout URL
+  href?: string; // CTA destination (homepage / nav jump)
+  checkoutUrl?: string; // Real payment link for the /pricing checkout board
 }
+
+/**
+ * Real payment destinations for the /pricing checkout board.
+ * Replace with your Stripe Checkout or Lemonsqueezy subscription links.
+ * (Set NEXT_PUBLIC_STRIPE_CREATOR_URL at build to override the placeholder.)
+ */
+export const CHECKOUT = {
+  creator:
+    process.env.NEXT_PUBLIC_STRIPE_CREATOR_URL ??
+    "https://buy.stripe.com/your-creator-subscription-link",
+  studio: "mailto:hello@buzzyai.video?subject=Studio%20plan%20inquiry",
+};
 
 export const plans: Plan[] = [
   {
@@ -84,7 +97,8 @@ export const plans: Plan[] = [
     ],
     featured: true,
     cta: "Upgrade",
-    href: "#checkout", // TODO: replace with Stripe / Lemonsqueezy checkout URL
+    href: "/pricing#checkout", // homepage / nav jump → standalone pricing board
+    checkoutUrl: CHECKOUT.creator, // real payment link (Stripe / Lemonsqueezy)
   },
   {
     name: "Studio",
@@ -100,7 +114,8 @@ export const plans: Plan[] = [
       "Commercial license",
     ],
     cta: "Contact us",
-    href: "mailto:hello@buzzyai.video",
+    href: "/pricing#checkout", // homepage / nav jump → standalone pricing board
+    checkoutUrl: CHECKOUT.studio, // real payment link (mailto inquiry)
   },
 ];
 

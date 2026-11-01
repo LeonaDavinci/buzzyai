@@ -15,7 +15,7 @@ export default function PricingJump({
   children: ReactNode;
 }) {
   return (
-    <Link href="/#pricing" className={className}>
+    <Link href="/pricing" className={className}>
       {children}
     </Link>
   );

@@ -10,7 +10,7 @@ const cols: FooterCol[] = [
       { label: "Models", href: "/#models" },
       { label: "Director Canvas", href: "/director" },
       { label: "Creative Tools", href: "/#tools" },
-      { label: "Pricing", href: "/#pricing" },
+      { label: "Pricing", href: "/pricing" },
       { label: "Changelog", href: "/" },
     ],
   },
