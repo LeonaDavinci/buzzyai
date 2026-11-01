@@ -44,18 +44,20 @@ export const tools: Tool[] = [
 
 export interface Plan {
   name: string;
-  price: string;
-  unit: string;
+  priceMonthly: string; // e.g. "$15"
+  priceYearly?: string; // per-month equivalent when billed annually, e.g. "$12"
+  unit: string; // "/mo"
   desc: string;
   features: string[];
   featured?: boolean;
   cta: string;
+  href?: string; // CTA destination; replace with your Stripe / Lemonsqueezy checkout URL
 }
 
 export const plans: Plan[] = [
   {
     name: "Starter",
-    price: "$0",
+    priceMonthly: "$0",
     unit: "/mo",
     desc: "For first-time AI video creators.",
     features: [
@@ -65,10 +67,12 @@ export const plans: Plan[] = [
       "Community support",
     ],
     cta: "Start free",
+    href: "/director",
   },
   {
     name: "Creator",
-    price: "$15",
+    priceMonthly: "$15",
+    priceYearly: "$12",
     unit: "/mo",
     desc: "For serious everyday creators.",
     features: [
@@ -80,10 +84,12 @@ export const plans: Plan[] = [
     ],
     featured: true,
     cta: "Upgrade",
+    href: "#checkout", // TODO: replace with Stripe / Lemonsqueezy checkout URL
   },
   {
     name: "Studio",
-    price: "$49",
+    priceMonthly: "$49",
+    priceYearly: "$39",
     unit: "/mo",
     desc: "For studios & brand teams.",
     features: [
@@ -94,6 +100,7 @@ export const plans: Plan[] = [
       "Commercial license",
     ],
     cta: "Contact us",
+    href: "mailto:hello@buzzyai.video",
   },
 ];
 

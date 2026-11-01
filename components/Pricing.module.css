@@ -1,3 +1,72 @@
+/* ---------- ShipAny-style billing toggle ---------- */
+.toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin: 22px auto 0;
+  padding: 5px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--panel);
+}
+
+.toggleBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  background: transparent;
+  color: var(--text-2);
+  font-size: 14px;
+  font-weight: 600;
+  padding: 9px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color 0.18s ease, background 0.18s ease;
+}
+
+.toggleBtn:hover {
+  color: var(--text);
+}
+
+.toggleActive {
+  color: #1a1400;
+  background: var(--gold);
+  box-shadow: 0 4px 14px rgba(245, 197, 24, 0.25);
+}
+
+.save {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  color: #1a1400;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 2px 7px;
+  border-radius: 999px;
+}
+
+.toggleActive .save {
+  background: rgba(26, 20, 0, 0.18);
+}
+
+.billedNote {
+  display: block;
+  font-size: 12px;
+  color: var(--text-2);
+  margin-top: 2px;
+}
+
+.strike {
+  opacity: 0.6;
+}
+
+.footnote {
+  text-align: center;
+  color: var(--text-3);
+  font-size: 13px;
+  margin-top: 26px;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
