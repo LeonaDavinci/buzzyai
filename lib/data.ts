@@ -73,12 +73,12 @@ export const CHECKOUT = {
 export const plans: Plan[] = [
   {
     name: "Starter",
-    priceMonthly: "$10",
-    priceYearly: "$8",
+    priceMonthly: "$12",
+    priceYearly: "$10",
     unit: "/mo",
     desc: "For first-time AI video creators.",
     features: [
-      "20 generations / month",
+      "120 generations / month",
       "720p export",
       "Core model access",
       "Community support",
