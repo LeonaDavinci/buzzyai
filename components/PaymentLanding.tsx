@@ -2,16 +2,14 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
-import { plans, CHECKOUT } from "@/lib/data";
+import { plans } from "@/lib/data";
 import styles from "./PaymentLanding.module.css";
 
-type CheckoutKey = keyof typeof CHECKOUT;
+type CheckoutKey = string;
 
 export default function PaymentLanding({ plan }: { plan?: string }) {
   const key = ((plan ?? "creator").toLowerCase()) as CheckoutKey;
   const data = plans.find((p) => p.name.toLowerCase() === key) ?? plans.find((p) => p.featured) ?? plans[0];
-  const checkout = CHECKOUT[key] ?? CHECKOUT.creator;
-  const isMailto = checkout.startsWith("mailto:");
 
   // Fire tracking on page load (begin_checkout) — this is what tells you a
   // user actually clicked "Continue to secure checkout" from /pricing.
@@ -58,19 +56,18 @@ export default function PaymentLanding({ plan }: { plan?: string }) {
             </ul>
           </div>
 
-          <a
-            href={checkout}
+          <Link
+            href={`/updating?plan=${key}`}
             className={`btn btn-primary ${styles.payBtn}`}
-            target={isMailto ? undefined : "_blank"}
-            rel={isMailto ? undefined : "noopener noreferrer"}
             onClick={handlePay}
           >
-            {isMailto ? "Contact our sales team" : "Pay with Stripe"}
-          </a>
+            Pay with Stripe
+          </Link>
 
           <p className={styles.note}>
-            Secure payment via Stripe / Lemonsqueezy. 30-day money-back. Cancel
-            anytime.
+            We&apos;re scaling to meet record demand and have temporarily paused
+            payments. Tap continue and leave your email to get priority access
+            the moment we reopen.
           </p>
 
           <Link href="/pricing" className={styles.back}>
