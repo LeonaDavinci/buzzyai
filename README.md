@@ -133,3 +133,26 @@ moving image.
    camera cube, and tune key light to match the mood.
 4. **Render with any model** — Pick the best engine from 11+ models and export
    consistent 4K clips, all from the same storyboard.
+
+## FAQ
+
+**Frequently asked questions**
+
+- **Which AI video models are supported?** — We aggregate 11+ leading video and
+  image models including Seedance, Kling, Runway, Veo, Google Omni, Hailuo, Wan,
+  and Pixverse. Switch between them freely from one interface.
+
+- **Can I use it without any filmmaking background?** — Yes. BuzzyAI.Video acts
+  as your AI director. With storyboard generation, visual camera control, and
+  real-time lighting, anyone can produce cinematic shorts.
+
+- **Do you support text-to-video and image-to-video?** — Both. Type a prompt to
+  generate video, or upload a reference image for image-to-video creation.
+
+- **What is the maximum output quality and length?** — Flagship models support
+  up to 4K quality, 30-second clips per generation, and project management for
+  up to 50 assets.
+
+- **How do you keep characters consistent across shots?** — The Storyboard
+  Creator records characters, objects, and locations, and automatically
+  maintains consistency when generating across scenes.
