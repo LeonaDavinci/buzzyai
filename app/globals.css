@@ -1,5 +1,5 @@
 :root {
-  /* 电影工具配色体系：深灰 + 金黄 */
+  /* Cinematic tool palette: dark gray + gold */
   --bg: #121212;
   --bg-elev: #1a1a1a;
   --panel: #202020;
@@ -107,7 +107,7 @@ video {
   color: var(--gold);
 }
 
-/* 按钮：激活按钮使用实色背景 */
+/* Buttons: active button uses solid fill */
 .btn {
   display: inline-flex;
   align-items: center;
@@ -145,7 +145,7 @@ video {
   color: var(--gold);
 }
 
-/* 胶片颗粒/网格背景 */
+/* Film grain / grid background */
 .film-grain::before {
   content: "";
   position: absolute;

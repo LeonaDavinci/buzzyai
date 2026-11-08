@@ -51,7 +51,7 @@
   overflow: hidden;
 }
 
-/* 01 分镜 */
+/* 01 Storyboard */
 .storyboard {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -183,7 +183,7 @@
   border-radius: 50%;
 }
 
-/* 03 打光 */
+/* 03 Lighting */
 .light {
   position: relative;
   width: 138px;

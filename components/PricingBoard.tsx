@@ -126,7 +126,7 @@ export default function PricingBoard() {
         </div>
       </section>
 
-      {/* ---------- 付费板块 / Checkout board ---------- */}
+      {/* ---------- Checkout board ---------- */}
       <section className="section tight" id="checkout">
         <div className="container">
           <div className={styles.board}>

@@ -73,8 +73,8 @@ export const CHECKOUT = {
 export const plans: Plan[] = [
   {
     name: "Starter",
-    priceMonthly: "$1",
-    priceYearly: "$1",
+    priceMonthly: "$10",
+    priceYearly: "$8",
     unit: "/mo",
     desc: "For first-time AI video creators.",
     features: [
@@ -89,8 +89,8 @@ export const plans: Plan[] = [
   },
   {
     name: "Creator",
-    priceMonthly: "$15",
-    priceYearly: "$12",
+    priceMonthly: "$25",
+    priceYearly: "$20",
     unit: "/mo",
     desc: "For serious everyday creators.",
     features: [
