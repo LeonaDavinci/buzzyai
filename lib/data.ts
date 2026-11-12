@@ -551,54 +551,6 @@ export const videoWorks: VideoWork[] = [
       "Two rappers on a city rooftop at golden hour, one leaning on the railing the other holding a mic, warm sunset light, skyline behind, music video aesthetic.",
   },
   {
-    slug: "rooftop-citylights",
-    title: "City Lights Cypher",
-    author: "Tariq & Morse",
-    tag: "Rap Duo",
-    category: "2-person-rap",
-    image: "/works/rooftop-citylights.png",
-    duration: "1:02",
-    model: "Seedance 2.5",
-    createdAt: "2026-11",
-    views: "67.9K",
-    description:
-      "A nighttime rooftop cypher for the rap-duo trend. The Director Canvas staged a slow orbit between the two MCs with the neon city as a fixed backdrop, keeping both characters consistent across the eight-bar loop.",
-    prompt:
-      "Two rappers on a rooftop at night with city lights behind, one sitting on an AC unit the other standing with a handheld mic, neon glow, moody music video style.",
-  },
-  {
-    slug: "car-session-night",
-    title: "Backseat Session",
-    author: "Duke & Lee",
-    tag: "Rap Duo",
-    category: "2-person-rap",
-    image: "/works/car-session-night.png",
-    duration: "0:49",
-    model: "Kling",
-    createdAt: "2026-11",
-    views: "112.4K",
-    description:
-      "A viral car-session rap-duo shot. Real-time relighting kept the passing streetlights from blowing out while the two performers stayed locked as one duo, so the intimacy reads as a real late-night take.",
-    prompt:
-      "Two rappers in the backseat of a car at night, window glow and street lights passing, one holding a phone as a makeshift mic, intimate music video vibe.",
-  },
-  {
-    slug: "car-window-glow",
-    title: "Window Glow Freestyle",
-    author: "Ash & Neo",
-    tag: "Rap Duo",
-    category: "2-person-rap",
-    image: "/works/car-window-glow.png",
-    duration: "0:55",
-    model: "Veo 3.1",
-    createdAt: "2026-11",
-    views: "98.7K",
-    description:
-      "A warm-interior car freestyle for the rap-duo format. The Director Canvas held the bokeh city through the glass and pushed the gold interior rim so both emcees stayed consistent take after take.",
-    prompt:
-      "Two rappers in a parked car at night, warm interior light, one rapping into a mic the other nodding, bokeh city lights through the window, music video aesthetic.",
-  },
-  {
     slug: "sneaker-drop-25",
     title: "Sneaker Drop '25",
     author: "BrandLab",
