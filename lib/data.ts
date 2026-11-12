@@ -519,22 +519,6 @@ export const videoWorks: VideoWork[] = [
       "Two rappers facing each other in a concrete stairwell cypher, one holding a mic, neon graffiti glow, low-angle, dramatic chiaroscuro lighting, music video aesthetic.",
   },
   {
-    slug: "hotel-hobby",
-    title: "Hotel Hobby",
-    author: "Maze & Cole",
-    tag: "2-Person Rap",
-    category: "2-person-rap",
-    image: "/works/hotel-hobby.png",
-    duration: "0:58",
-    model: "Veo 3.1",
-    createdAt: "2026-09",
-    views: "53.7K",
-    description:
-      "A two-emcee hobby take on the viral bold-orange studio promo look. Both performers were locked as one consistent duo and the camera was staged on the Director Canvas cube to hold the single-color backdrop while they trade verses around the hanging mic.",
-    prompt:
-      "Two rappers in a bright solid orange studio, a vintage condenser mic hanging between them, symmetric front medium shot, high-saturation monochrome orange glossy hip-hop promo aesthetic.",
-  },
-  {
     slug: "hotel-lobby-night",
     title: "Lobby After Hours",
     author: "Juno & Pax",
@@ -549,22 +533,6 @@ export const videoWorks: VideoWork[] = [
       "A trending two-rapper studio promo that blew up this month — the bold orange monochrome backdrop, a central hanging mic, and two locked-in characters. The Director Canvas kept both emcees consistent across every cut so the virality reads as a real series, not a one-off.",
     prompt:
       "Two male hip-hop rappers in a bright solid orange studio, vintage rose-gold mic hanging between them, symmetric medium shot, high-saturation monochrome orange glossy music-video promo aesthetic.",
-  },
-  {
-    slug: "hotel-lobby-lounge",
-    title: "Lobby Lounge Takeover",
-    author: "Drey & Sol",
-    tag: "2-Person Rap",
-    category: "2-person-rap",
-    image: "/works/hotel-lobby-lounge.png",
-    duration: "1:21",
-    model: "Seedance 2.5",
-    createdAt: "2026-11",
-    views: "92.6K",
-    description:
-      "This month's most-shared two-person rap promo. Shot on the Director Canvas with a static symmetric frame on the orange studio backdrop, the locked duo and central mic sell the popular bold-color hip-hop shoot energy driving the trend.",
-    prompt:
-      "Two rappers posed around a central hanging vintage mic in a bright solid orange studio, symmetric front shot, bold orange monochrome high-saturation glossy hip-hop promo style.",
   },
   {
     slug: "rooftop-sunset",
@@ -629,38 +597,6 @@ export const videoWorks: VideoWork[] = [
       "A warm-interior car freestyle for the rap-duo format. The Director Canvas held the bokeh city through the glass and pushed the gold interior rim so both emcees stayed consistent take after take.",
     prompt:
       "Two rappers in a parked car at night, warm interior light, one rapping into a mic the other nodding, bokeh city lights through the window, music video aesthetic.",
-  },
-  {
-    slug: "challenge-takeover",
-    title: "Challenge Takeover",
-    author: "Pip & Juno",
-    tag: "Rap Duo",
-    category: "2-person-rap",
-    image: "/works/challenge-takeover.png",
-    duration: "0:41",
-    model: "Seedance 2.5",
-    createdAt: "2026-11",
-    views: "143.8K",
-    description:
-      "A trending dance-challenge rap-duo clip. Both creators were locked as a consistent pair and the Director Canvas kept the phone-tripod framing tight so the synchronized moves stayed on-beat across cuts.",
-    prompt:
-      "Two creators doing a viral dance challenge in a living room, synchronized movement, a phone on a tripod filming, bright energetic short-form vibe.",
-  },
-  {
-    slug: "mirror-dance-duo",
-    title: "Mirror Dance Duo",
-    author: "Sol & Drey",
-    tag: "Rap Duo",
-    category: "2-person-rap",
-    image: "/works/mirror-dance-duo.png",
-    duration: "0:38",
-    model: "Kling",
-    createdAt: "2026-11",
-    views: "156.3K",
-    description:
-      "A mirror-shot rap-duo challenge that blew up this month. The Director Canvas mirrored the reflection and held the ring-light grade while both dancers stayed locked as one duo, driving the share rate.",
-    prompt:
-      "Two dancers rapping in front of a mirror in a studio, reflection visible, energetic pose, ring light, trending music video challenge vibe.",
   },
   {
     slug: "sneaker-drop-25",
