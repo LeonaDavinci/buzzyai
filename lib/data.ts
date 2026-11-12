@@ -519,20 +519,52 @@ export const videoWorks: VideoWork[] = [
       "Two rappers facing each other in a concrete stairwell cypher, one holding a mic, neon graffiti glow, low-angle, dramatic chiaroscuro lighting, music video aesthetic.",
   },
   {
-    slug: "backyard-battle",
-    title: "Backyard Battle",
+    slug: "hotel-hobby",
+    title: "Hotel Hobby",
     author: "Maze & Cole",
     tag: "2-Person Rap",
     category: "2-person-rap",
-    image: "/works/backyard-battle.png",
+    image: "/works/hotel-hobby.png",
     duration: "0:58",
     model: "Veo 3.1",
     createdAt: "2026-09",
     views: "53.7K",
     description:
-      "A backyard rap battle at golden hour. Real-time relighting kept the string lights warm while the late sun raked across both MCs, so the freestyle reads like a real performance instead of a prompt.",
+      "A two-emcee hobby take on the viral bold-orange studio promo look. Both performers were locked as one consistent duo and the camera was staged on the Director Canvas cube to hold the single-color backdrop while they trade verses around the hanging mic.",
     prompt:
-      "Two rappers in a backyard freestyle battle at golden hour, string lights overhead, warm haze, relaxed confident poses, music video style.",
+      "Two rappers in a bright solid orange studio, a vintage condenser mic hanging between them, symmetric front medium shot, high-saturation monochrome orange glossy hip-hop promo aesthetic.",
+  },
+  {
+    slug: "hotel-lobby-night",
+    title: "Lobby After Hours",
+    author: "Juno & Pax",
+    tag: "2-Person Rap",
+    category: "2-person-rap",
+    image: "/works/hotel-lobby-night.png",
+    duration: "1:05",
+    model: "Veo 3.1",
+    createdAt: "2026-11",
+    views: "78.3K",
+    description:
+      "A trending two-rapper studio promo that blew up this month — the bold orange monochrome backdrop, a central hanging mic, and two locked-in characters. The Director Canvas kept both emcees consistent across every cut so the virality reads as a real series, not a one-off.",
+    prompt:
+      "Two male hip-hop rappers in a bright solid orange studio, vintage rose-gold mic hanging between them, symmetric medium shot, high-saturation monochrome orange glossy music-video promo aesthetic.",
+  },
+  {
+    slug: "hotel-lobby-lounge",
+    title: "Lobby Lounge Takeover",
+    author: "Drey & Sol",
+    tag: "2-Person Rap",
+    category: "2-person-rap",
+    image: "/works/hotel-lobby-lounge.png",
+    duration: "1:21",
+    model: "Seedance 2.5",
+    createdAt: "2026-11",
+    views: "92.6K",
+    description:
+      "This month's most-shared two-person rap promo. Shot on the Director Canvas with a static symmetric frame on the orange studio backdrop, the locked duo and central mic sell the popular bold-color hip-hop shoot energy driving the trend.",
+    prompt:
+      "Two rappers posed around a central hanging vintage mic in a bright solid orange studio, symmetric front shot, bold orange monochrome high-saturation glossy hip-hop promo style.",
   },
   {
     slug: "sneaker-drop-25",
