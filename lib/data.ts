@@ -239,11 +239,90 @@ export const testimonials: Testimonial[] = [
 
 /* ---------- Video Works (homepage screenshot gallery + detail pages) ---------- */
 
+/* ---------- Work categories (demand-tracking dimensions) ----------
+ * These are the categories you want to measure user interest against.
+ * Each work resolves to exactly one category so detail-page views can be
+ * aggregated per category from the server logs (see app/api/track).
+ */
+export type CategoryId =
+  | "viral-remake"
+  | "2-person-rap"
+  | "ad"
+  | "ai-short-film"
+  | "music-video";
+
+export interface WorkCategory {
+  id: CategoryId;
+  label: string; // shown on the site (English)
+  cn: string; // owner reference (Chinese meaning)
+  blurb: string; // one-line description for the showcase block
+}
+
+export const workCategories: WorkCategory[] = [
+  {
+    id: "viral-remake",
+    label: "Viral Remake",
+    cn: "爆款复刻",
+    blurb:
+      "Recreate trending clips and challenges with a cinematic AI director — same hook, upgraded look.",
+  },
+  {
+    id: "2-person-rap",
+    label: "2-Person Rap",
+    cn: "2人说唱视频",
+    blurb:
+      "Two emcees, one frame. Lock both performers and stage the camera so every verse lands.",
+  },
+  {
+    id: "ad",
+    label: "Ad",
+    cn: "广告视频",
+    blurb:
+      "Scroll-stopping brand spots — product launches, promos, and explainer ads in minutes.",
+  },
+  {
+    id: "ai-short-film",
+    label: "AI Short Film",
+    cn: "AI短片",
+    blurb:
+      "Character-driven narratives with consistent looks from opening shot to end card.",
+  },
+  {
+    id: "music-video",
+    label: "Music Video",
+    cn: "音乐视频",
+    blurb:
+      "Sync visuals to the beat and build expressive performance clips that move with the music.",
+  },
+];
+
+export function categoryLabel(id: CategoryId): string {
+  return workCategories.find((c) => c.id === id)?.label ?? id;
+}
+
+/** Map a legacy `tag` to a category for works that don't set `category`. */
+export function tagToCategory(tag: string): CategoryId {
+  switch (tag) {
+    case "MV":
+      return "music-video";
+    case "Animation":
+    case "AI Film":
+    default:
+      return "ai-short-film";
+  }
+}
+
+/** Resolve the category a work belongs to (explicit field wins). */
+export function categoryOf(w: VideoWork): CategoryId {
+  return w.category ?? tagToCategory(w.tag);
+}
+
 export interface VideoWork {
   slug: string;
   title: string;
   author: string;
-  tag: string; // category: AI Film | Animation | MV
+  tag: string; // legacy display label (AI Film | Animation | MV | category label)
+  category?: CategoryId; // explicit tracking category (preferred)
   image: string; // screenshot file in /public/works
   duration: string; // "1:48"
   model: string; // model used to render
@@ -388,5 +467,103 @@ export const videoWorks: VideoWork[] = [
       "An audio-reactive choir of glowing cells sings the vocal hook. Neon membrane pulses were layered in real time so the visuals never fight the melody.",
     prompt:
       "Audio-reactive glowing cells singing in a dark void, neon membrane pulses, cyan and magenta bioluminescence, clean dark tech aesthetic, widescreen.",
+  },
+
+  /* ---------- New categories: Viral Remake / 2-Person Rap / Ad ---------- */
+  {
+    slug: "neon-bottle-flip",
+    title: "Neon Bottle Flip",
+    author: "TrendLab",
+    tag: "Viral Remake",
+    category: "viral-remake",
+    image: "/works/neon-bottle-flip.png",
+    duration: "0:31",
+    model: "Seedance 2.5",
+    createdAt: "2026-10",
+    views: "112K",
+    description:
+      "A creator restages the viral bottle-flip challenge as a neon-noir short — the same three-second hook, but lit like a music video. The flip was blocked shot-by-shot in the Storyboard Creator so it lands on the downbeat every single time.",
+    prompt:
+      "A person flipping a water bottle that lands perfectly on a neon rooftop at night, golden and cyan rim light, slow-motion, cinematic 35mm grain, widescreen.",
+  },
+  {
+    slug: "subway-dance-remake",
+    title: "Subway Dance Remake",
+    author: "Echo",
+    tag: "Viral Remake",
+    category: "viral-remake",
+    image: "/works/subway-dance-remake.png",
+    duration: "0:44",
+    model: "Kling",
+    createdAt: "2026-10",
+    views: "86.4K",
+    description:
+      "A two-person dance trend rebuilt on a rainy subway platform. The original move set was traced frame-by-frame in the storyboard, then relit in real time so the spray-paint halos read cleanly against the tunnel dark.",
+    prompt:
+      "Two dancers performing a viral subway dance trend on a dim platform, motion blur, warm practical lights, moody atmosphere, cinematic 35mm grain.",
+  },
+  {
+    slug: "stairwell-cypher",
+    title: "Stairwell Cypher",
+    author: "KO & Rin",
+    tag: "2-Person Rap",
+    category: "2-person-rap",
+    image: "/works/stairwell-cypher.png",
+    duration: "1:12",
+    model: "Seedance 2.5",
+    createdAt: "2026-10",
+    views: "64.0K",
+    description:
+      "Two emcees trade verses in a stairwell cypher. Both performers were locked as consistent characters and the camera was staged on the Director Canvas cube to weave between them without ever breaking the eight-bar loop.",
+    prompt:
+      "Two rappers facing each other in a concrete stairwell cypher, one holding a mic, neon graffiti glow, low-angle, dramatic chiaroscuro lighting, music video aesthetic.",
+  },
+  {
+    slug: "backyard-battle",
+    title: "Backyard Battle",
+    author: "Maze & Cole",
+    tag: "2-Person Rap",
+    category: "2-person-rap",
+    image: "/works/backyard-battle.png",
+    duration: "0:58",
+    model: "Veo 3.1",
+    createdAt: "2026-09",
+    views: "53.7K",
+    description:
+      "A backyard rap battle at golden hour. Real-time relighting kept the string lights warm while the late sun raked across both MCs, so the freestyle reads like a real performance instead of a prompt.",
+    prompt:
+      "Two rappers in a backyard freestyle battle at golden hour, string lights overhead, warm haze, relaxed confident poses, music video style.",
+  },
+  {
+    slug: "sneaker-drop-25",
+    title: "Sneaker Drop '25",
+    author: "BrandLab",
+    tag: "Ad",
+    category: "ad",
+    image: "/works/sneaker-drop-25.png",
+    duration: "0:30",
+    model: "Google Omni",
+    createdAt: "2026-10",
+    views: "41.2K",
+    description:
+      "A product launch spot for a sneaker drop. The hero shoe was generated on a reflective pedestal and relit in real time to push the gold rim, then cut with fast motion slices for a premium campaign feel.",
+    prompt:
+      "A glowing sneaker floating above a dark reflective pedestal with gold rim light, sleek studio, premium brand campaign, high contrast.",
+  },
+  {
+    slug: "coffee-spot",
+    title: "Coffee, But Cinematic",
+    author: "Roast Co.",
+    tag: "Ad",
+    category: "ad",
+    image: "/works/coffee-spot.png",
+    duration: "0:36",
+    model: "Kling",
+    createdAt: "2026-09",
+    views: "29.8K",
+    description:
+      "A café brand spot built around a single steaming cup at sunrise. The warm window light was shaped in the Director Canvas so the product stays the hero across every cut.",
+    prompt:
+      "A steaming cup of coffee on a warm wooden table by a window at sunrise, soft golden light, cozy premium cafe campaign, shallow focus.",
   },
 ];

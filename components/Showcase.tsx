@@ -1,8 +1,16 @@
 import Link from "next/link";
-import { videoWorks, VideoWork } from "@/lib/data";
+import {
+  videoWorks,
+  workCategories,
+  categoryOf,
+  categoryLabel,
+  VideoWork,
+} from "@/lib/data";
+import CategoryImpression from "./CategoryImpression";
 import styles from "./Showcase.module.css";
 
 function WorkCard({ w }: { w: VideoWork }) {
+  const cat = categoryOf(w);
   return (
     <Link
       href={`/works/${w.slug}`}
@@ -13,14 +21,14 @@ function WorkCard({ w }: { w: VideoWork }) {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={w.image}
-          alt={`${w.title} — ${w.tag} screenshot`}
+          alt={`${w.title} — ${categoryLabel(cat)} screenshot`}
           className={styles.img}
           loading="lazy"
         />
         <span className={styles.play} aria-hidden="true">
           ▶
         </span>
-        <span className={styles.tag}>{w.tag}</span>
+        <span className={styles.tag}>{categoryLabel(cat)}</span>
         <span className={styles.duration}>{w.duration}</span>
       </div>
       <div className={styles.meta}>
@@ -35,10 +43,6 @@ function WorkCard({ w }: { w: VideoWork }) {
 }
 
 export default function Showcase() {
-  const films = videoWorks.filter((w) => w.tag === "AI Film");
-  const animations = videoWorks.filter((w) => w.tag === "Animation");
-  const mv = videoWorks.filter((w) => w.tag === "MV");
-
   return (
     <section
       className="section"
@@ -50,33 +54,30 @@ export default function Showcase() {
         <h2 className="section-title">
           From idea to screen, <span className="gold">see what you can make</span>
         </h2>
+        <p className="section-sub">
+          Pick a format and see how the AI director handles it — every piece
+          below opens its own breakdown so you can study the shot list, model,
+          and prompt.
+        </p>
 
-        <div className={styles.block}>
-          <h3 className={styles.cat}>AI Films</h3>
-          <div className={styles.grid}>
-            {films.map((w) => (
-              <WorkCard key={w.slug} w={w} />
-            ))}
-          </div>
-        </div>
-
-        <div className={styles.block}>
-          <h3 className={styles.cat}>Animations</h3>
-          <div className={styles.grid3}>
-            {animations.map((w) => (
-              <WorkCard key={w.slug} w={w} />
-            ))}
-          </div>
-        </div>
-
-        <div className={styles.block}>
-          <h3 className={styles.cat}>MV & Explainer</h3>
-          <div className={styles.grid3}>
-            {mv.map((w) => (
-              <WorkCard key={w.slug} w={w} />
-            ))}
-          </div>
-        </div>
+        {workCategories.map((c) => {
+          const items = videoWorks.filter((w) => categoryOf(w) === c.id);
+          if (items.length === 0) return null;
+          return (
+            <div className={styles.block} id={`cat-${c.id}`} key={c.id}>
+              <CategoryImpression category={c.id} />
+              <div className={styles.catHead}>
+                <h3 className={styles.cat}>{c.label}</h3>
+                <p className={styles.catBlurb}>{c.blurb}</p>
+              </div>
+              <div className={styles.grid}>
+                {items.map((w) => (
+                  <WorkCard key={w.slug} w={w} />
+                ))}
+              </div>
+            </div>
+          );
+        })}
       </div>
     </section>
   );

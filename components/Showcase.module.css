@@ -2,12 +2,23 @@
   margin-top: 48px;
 }
 
+.catHead {
+  margin-bottom: 22px;
+  padding-left: 14px;
+  border-left: 3px solid var(--gold);
+}
+
 .cat {
   font-size: 20px;
   font-weight: 700;
-  margin-bottom: 20px;
-  padding-left: 14px;
-  border-left: 3px solid var(--gold);
+  line-height: 1.2;
+}
+
+.catBlurb {
+  margin-top: 6px;
+  font-size: 14px;
+  color: var(--text-2);
+  max-width: 620px;
 }
 
 .grid {
