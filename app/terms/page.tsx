@@ -317,6 +317,10 @@ const doc: LegalDoc = {
       heading: "Acceptable Use Policy",
       blocks: [
         {
+          type: "callout",
+          text: "Our full, standalone Acceptable Use Policy — covering all prohibited content categories, content moderation, reporting channels, response timelines and enforcement actions — is published at https://www.buzzyai.video/aup and is incorporated into these Terms by reference.",
+        },
+        {
           type: "sub",
           heading: "10.1 Permitted Uses",
           blocks: [
@@ -383,7 +387,7 @@ const doc: LegalDoc = {
           blocks: [
             {
               type: "p",
-              text: "We screen user prompts through automated content-safety filtering and apply a moderation step to generated outputs. If you encounter content that violates this policy, report it to hello@buzzyai.video. We review reports and may take enforcement actions including content removal, credit forfeiture, account suspension, or permanent bans. Users may appeal an enforcement decision by writing to the same address.",
+              text: "We screen user prompts through automated content-safety filtering (Waffo Prompt Sift plus an actively updated blocklist) before generation and apply a moderation step to generated outputs. If you encounter content that violates this policy, report it to hello@buzzyai.video. We review reports and may take enforcement actions including content removal, credit forfeiture, account suspension, or permanent bans. Users may appeal an enforcement decision by writing to the same address. The full process is described in our standalone Acceptable Use Policy at https://www.buzzyai.video/aup.",
             },
           ],
         },

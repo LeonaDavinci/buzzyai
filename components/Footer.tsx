@@ -33,6 +33,7 @@ const cols: FooterCol[] = [
       { label: "Contact", href: "mailto:hello@buzzyai.video" },
       { label: "Privacy", href: "/privacy" },
       { label: "Terms", href: "/terms" },
+      { label: "Acceptable Use", href: "/aup" },
     ],
   },
 ];

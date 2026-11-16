@@ -9,6 +9,47 @@ type Status = "idle" | "storyboard" | "rendering" | "done";
 
 const SHOT_NAMES = ["Opening", "Mid shot", "Close-up", "End card"];
 
+type ScanVerdict = {
+  action: "allow" | "review" | "block";
+  reasonCode: string;
+  requestId: string;
+};
+
+/**
+ * Screens the script through our Prompt Sift moderation endpoint before any
+ * generation. Returns true only on an explicit "allow". "block" surfaces a
+ * friendly message; transient "review"/degraded verdicts are retried a few
+ * times (holding the request) rather than generating without a verdict.
+ */
+async function screenPrompt(prompt: string): Promise<{ ok: boolean; message?: string }> {
+  const friendlyBlock =
+    "This content doesn't meet our usage guidelines. Please edit your script and try again.";
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      const res = await fetch("/api/scan-prompt", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ prompt, locale: "en" }),
+      });
+      if (!res.ok) throw new Error(`scan status ${res.status}`);
+      const verdict = (await res.json()) as ScanVerdict;
+      if (verdict.action === "allow") return { ok: true };
+      if (verdict.action === "block") return { ok: false, message: friendlyBlock };
+      // "review" / service_degraded: hold briefly and retry, never generate
+      // without a verdict.
+      await new Promise((r) => setTimeout(r, 900 * (attempt + 1)));
+    } catch {
+      // Network error: do not generate unmoderated; retry then hold.
+      await new Promise((r) => setTimeout(r, 900 * (attempt + 1)));
+    }
+  }
+  return {
+    ok: false,
+    message:
+      "We're checking this script for safety right now. Please try again in a moment.",
+  };
+}
+
 export default function DirectorCanvasApp() {
   const [script, setScript] = useState(
     "A lone traveler walks through a golden desert at sunset, then looks up as light blooms across the sky."
@@ -17,6 +58,8 @@ export default function DirectorCanvasApp() {
   const [board, setBoard] = useState<string[]>([]);
   const [progress, setProgress] = useState(0);
   const [model, setModel] = useState("Seedance 2.5");
+  const [scanning, setScanning] = useState(false);
+  const [notice, setNotice] = useState("");
 
   // camera
   const [angle, setAngle] = useState(-22);
@@ -29,8 +72,16 @@ export default function DirectorCanvasApp() {
   const [temp, setTemp] = useState(40); // 0 cool -> 100 warm
   const [rim, setRim] = useState(true);
 
-  function buildStoryboard() {
+  async function buildStoryboard() {
     if (!script.trim()) return;
+    setNotice("");
+    setScanning(true);
+    const verdict = await screenPrompt(script.trim());
+    setScanning(false);
+    if (!verdict.ok) {
+      setNotice(verdict.message ?? "Please revise your script and try again.");
+      return;
+    }
     setStatus("storyboard");
     setBoard([]);
     let i = 0;
@@ -143,9 +194,14 @@ export default function DirectorCanvasApp() {
             onChange={(e) => setScript(e.target.value)}
             rows={3}
           />
-          <button className="btn btn-ghost" onClick={buildStoryboard}>
-            Generate storyboard
+          <button
+            className="btn btn-ghost"
+            onClick={buildStoryboard}
+            disabled={scanning}
+          >
+            {scanning ? "Checking safety…" : "Generate storyboard"}
           </button>
+          {notice && <p className={styles.notice}>{notice}</p>}
           {board.length > 0 && (
             <div className={styles.shots}>
               {SHOT_NAMES.map((s, i) => (
