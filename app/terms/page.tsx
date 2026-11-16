@@ -6,11 +6,12 @@ import Legal, { LegalDoc } from "@/components/Legal";
 export const metadata: Metadata = {
   title: "Terms of Service - BuzzyAI.Video",
   description:
-    "The terms that govern your use of BuzzyAI.Video, an AI video directing workspace. Read about accounts, subscriptions, billing, refunds, acceptable use and your rights.",
+    "The Terms of Service governing your use of BuzzyAI.Video, an AI video directing workspace. Covers subscriptions, recurring billing, cancellation, refunds, AI outputs, acceptable use and liability.",
   robots: { index: true, follow: true },
   openGraph: {
     title: "Terms of Service - BuzzyAI.Video",
-    description: "The terms that govern your use of BuzzyAI.Video.",
+    description:
+      "The terms that govern your use of BuzzyAI.Video and its AI-powered video creation services.",
     type: "website",
     url: "https://buzzyai.video/terms",
   },
@@ -18,101 +19,476 @@ export const metadata: Metadata = {
 
 const doc: LegalDoc = {
   eyebrow: "Legal",
-  title: "Terms of Service",
+  title: "Terms of Service — AI-Powered Services",
+  legalName: "BuzzyAI.Video",
+  version: "Version 1.0",
   updated: "November 16, 2026",
   intro:
-    "These Terms of Service (\"Terms\") govern your access to and use of BuzzyAI.Video (the \"Service\"), an AI video directing workspace operated by BuzzyAI.Video (\"we\", \"us\", \"our\"). By accessing or using the Service you agree to be bound by these Terms. If you do not agree, please do not use the Service.",
+    "These Terms of Service (\"Terms\") govern your access to and use of BuzzyAI.Video, an AI-powered video directing workspace available at https://www.buzzyai.video (the \"Service\"). By creating an account, subscribing to a plan, or otherwise using the Service, you agree to these Terms and to our Privacy Policy. If you do not agree, you may not use the Service.",
   sections: [
     {
-      heading: "Who We Are and How to Contact Us",
-      paragraphs: [
-        "The Service is operated by BuzzyAI.Video. You can reach us about these Terms or the Service at hello@buzzyai.video. Our website is https://www.buzzyai.video.",
-        "These Terms form a binding agreement between you and us. If you use the Service on behalf of a company or other organization, you confirm that you have authority to accept these Terms on its behalf.",
+      heading: "Introduction & Acceptance of Terms",
+      blocks: [
+        {
+          type: "p",
+          text: "Welcome to BuzzyAI.Video (\"BuzzyAI.Video\" / \"we\" / \"us\" / \"our\"). We operate the Service as an individual / sole trader under applicable law. These Terms govern your access to and use of our AI-powered services, including AI video storyboarding, camera control, relighting and video generation, available at https://www.buzzyai.video (the \"Service\").",
+        },
+        {
+          type: "p",
+          text: "By creating an account, subscribing to any plan, or otherwise using the Service, you confirm that you: (a) are at least 18 years of age; (b) have read, understood, and agree to be bound by these Terms; (c) agree to our Privacy Policy; and (d) are authorized to enter into this agreement on behalf of yourself or any organization you represent.",
+        },
+        {
+          type: "callout",
+          text: "Important: If you do not agree to these Terms, you may not use the Service. Continued use after any update constitutes acceptance of the revised Terms.",
+        },
       ],
     },
     {
-      heading: "Eligibility and Accounts",
-      paragraphs: [
-        "You must be at least 16 years old, or the age of legal majority in your country, to use the Service. You agree to provide accurate information when creating an account and to keep your account credentials secure. You are responsible for all activity that occurs under your account.",
-        "We may suspend or terminate accounts that violate these Terms, contain false registration information, or are used in a way that puts the Service or others at risk.",
+      heading: "Service Description",
+      blocks: [
+        {
+          type: "sub",
+          heading: "2.1 What We Provide",
+          blocks: [
+            {
+              type: "p",
+              text: "BuzzyAI.Video provides an AI-powered platform that enables users to plan and generate cinematic AI video — including storyboards, multi-angle camera control, real-time relighting and text-to-video generation. The Service is a digital software-as-a-service (SaaS) product delivered via the internet.",
+            },
+          ],
+        },
+        {
+          type: "sub",
+          heading: "2.2 Nature of the Service",
+          blocks: [
+            {
+              type: "p",
+              text: "The Service is a digital, intangible product. Upon confirmed payment, access is granted immediately. Due to the immediate digital delivery, specific limitations apply to refunds as described in Section 7.",
+            },
+          ],
+        },
+        {
+          type: "sub",
+          heading: "2.3 AI Model Dependency",
+          blocks: [
+            {
+              type: "p",
+              text: "Our Service utilizes third-party AI model providers, including Veo, Kling, Seedance, Runway and Google models. We are an independent product and are not affiliated with, endorsed by, or operated by any of these model providers. Service performance and availability may be affected by the operational status of these providers. We will endeavor to communicate significant disruptions in a timely manner.",
+            },
+          ],
+        },
       ],
     },
     {
-      heading: "The Service",
-      paragraphs: [
-        "BuzzyAI.Video is a browser-based workspace that helps you plan and generate AI-assisted video. It brings together third-party AI models and provides tools such as storyboards, camera controls and relighting. The Service may be updated, changed or discontinued at any time as we improve it or respond to technical, legal or commercial constraints.",
+      heading: "Account Registration & Eligibility",
+      blocks: [
+        {
+          type: "sub",
+          heading: "3.1 Account Creation",
+          blocks: [
+            {
+              type: "p",
+              text: "To use the Service, you must create an account with accurate and complete information. You are responsible for maintaining the confidentiality of your login credentials and for all activities under your account.",
+            },
+          ],
+        },
+        {
+          type: "sub",
+          heading: "3.2 Account Security",
+          blocks: [
+            {
+              type: "bullets",
+              items: [
+                "Notify us immediately of any unauthorized use at hello@buzzyai.video.",
+                "Do not share your credentials with any third party.",
+                "Keep your billing email address up to date.",
+              ],
+            },
+          ],
+        },
+        {
+          type: "sub",
+          heading: "3.3 Business Accounts",
+          blocks: [
+            {
+              type: "p",
+              text: "If you register on behalf of a company or organization, you represent that you have authority to bind that entity to these Terms.",
+            },
+          ],
+        },
       ],
     },
     {
-      heading: "Subscriptions, Pricing and Billing",
-      paragraphs: [
-        "Some features are offered on a paid subscription basis. Current plan names, prices, included generation quotas and billing periods (monthly or annual) are shown on our Pricing page before you purchase. By subscribing you agree to the price and billing period displayed at checkout.",
-        "Subscriptions renew automatically for the same period unless you cancel before the next billing date. You can cancel at any time from your account or by contacting us; cancellation takes effect at the end of the current billing period. Fees are charged in advance and are generally non-refundable, except where required by applicable law or as described in our refund policy below.",
+      heading: "Subscription Plans",
+      blocks: [
+        {
+          type: "p",
+          text: "We offer subscription plans for access to the Service (currently Starter, Creator and Studio), with monthly and annual billing options and a monthly allowance of generations. For current plan details and pricing, please visit https://www.buzzyai.video/pricing.",
+        },
+        {
+          type: "p",
+          text: "We reserve the right to modify plan features or introduce new plans at any time. Price changes are governed by Section 5.1.",
+        },
       ],
     },
     {
-      heading: "Refunds and Cancellation",
-      paragraphs: [
-        "If you are charged in error, or if a paid feature is materially unavailable due to a fault on our side, you may request a refund by writing to hello@buzzyai.video with your account email and the relevant transaction details. We review refund requests case by case and aim to respond within a reasonable time.",
-        "Nothing in these Terms limits any statutory cancellation or refund rights you may have under the law of your country.",
+      heading: "Billing & Payment",
+      blocks: [
+        {
+          type: "sub",
+          heading: "5.1 Recurring Billing Authorization",
+          blocks: [
+            {
+              type: "p",
+              text: "By providing your payment method and subscribing to a paid plan, you expressly authorize BuzzyAI.Video to charge your payment method on a recurring basis for the applicable subscription fee. This recurring authorization remains in effect until you cancel in accordance with Section 6. Your subscription renews automatically at the end of each billing period unless cancelled. We will send you advance notice before the renewal of any annual subscription.",
+            },
+          ],
+        },
+        {
+          type: "sub",
+          heading: "5.2 Taxes",
+          blocks: [
+            {
+              type: "p",
+              text: "Prices are exclusive of applicable taxes (including VAT, GST, sales tax, or similar) unless otherwise stated. As our Merchant of Record, Waffo Pancake calculates and remits applicable taxes where required by law, and the applicable tax is shown at checkout.",
+            },
+          ],
+        },
+        {
+          type: "sub",
+          heading: "5.3 Payment Processor",
+          blocks: [
+            {
+              type: "p",
+              text: "Payments are processed by our payment processor and Merchant of Record, Waffo Pancake. Your card details are submitted directly to Waffo Pancake's PCI-DSS compliant checkout and are not stored on our servers. The name that will appear on your card statement is BuzzyAI.Video / Waffo.",
+            },
+          ],
+        },
       ],
     },
     {
-      heading: "Your Content and Outputs",
-      paragraphs: [
-        "You retain ownership of the text, images and other material you upload or input into the Service (\"Your Content\"). You grant us a limited, non-exclusive licence to process Your Content solely to operate and provide the Service, including transmitting it to third-party AI model providers as needed to generate outputs.",
-        "You are responsible for ensuring you have the rights and permissions needed to submit Your Content and for the legality of the outputs you create. Outputs generated by AI may be similar to outputs generated for others, and we do not guarantee that any output is unique or free of third-party rights. You should review outputs before using them commercially.",
+      heading: "Cancellation Policy",
+      blocks: [
+        {
+          type: "sub",
+          heading: "6.1 How to Cancel",
+          blocks: [
+            {
+              type: "p",
+              text: "You may cancel your subscription at any time through:",
+            },
+            {
+              type: "bullets",
+              items: [
+                "Online (recommended): Account Settings → Subscription → Cancel Subscription; or",
+                "Email: send a cancellation request from your registered email to hello@buzzyai.video.",
+              ],
+            },
+            {
+              type: "p",
+              text: "Cancellation takes effect at the end of your current billing period, and a confirmation will be sent to your registered email.",
+            },
+          ],
+        },
+        {
+          type: "sub",
+          heading: "6.2 Effect of Cancellation",
+          blocks: [
+            {
+              type: "bullets",
+              items: [
+                "Your subscription remains active until the end of the current billing period.",
+                "You will not be charged for subsequent billing periods.",
+                "Account data is retained for 90 days after cancellation, then deleted per our Privacy Policy.",
+              ],
+            },
+          ],
+        },
       ],
     },
     {
-      heading: "Acceptable Use",
-      paragraphs: [
-        "You agree not to use the Service to create, upload or distribute content that is illegal, infringes others' rights, is hateful or harassing, depicts sexual abuse or non-consensual intimate imagery, or is designed to deceive or defraud. You also agree not to attempt to reverse engineer, disrupt, overload or gain unauthorized access to the Service, or to resell access to it without permission.",
+      heading: "Refund Policy",
+      blocks: [
+        {
+          type: "sub",
+          heading: "7.1 General Policy",
+          blocks: [
+            {
+              type: "p",
+              text: "Due to the immediate and intangible nature of our digital services, subscription fees are generally non-refundable, except as expressly stated below.",
+            },
+          ],
+        },
+        {
+          type: "sub",
+          heading: "7.2 Eligible Refunds",
+          blocks: [
+            {
+              type: "bullets",
+              items: [
+                "New subscriber 7-day guarantee: a full refund is available to first-time subscribers within 7 days of the initial charge, provided usage has not exceeded 50% of the plan's monthly generation quota.",
+                "Duplicate charge: a full refund for any billing error resulting in a duplicate charge.",
+                "Verified service outage (≥72 hours): a pro-rated credit or refund for extended outages within our control.",
+                "Statutory rights: where applicable law grants withdrawal or refund rights (for example, the 14-day withdrawal right in the EU/UK), those rights are preserved.",
+              ],
+            },
+          ],
+        },
+        {
+          type: "sub",
+          heading: "7.3 How to Request a Refund",
+          blocks: [
+            {
+              type: "p",
+              text: "To request a refund, contact us at hello@buzzyai.video with your account email, transaction ID, and reason. We acknowledge requests within 2 business days and process eligible refunds within 5–10 business days.",
+            },
+          ],
+        },
+        {
+          type: "sub",
+          heading: "7.4 Non-Refundable Items",
+          blocks: [
+            {
+              type: "bullets",
+              items: [
+                "Fees for subscription periods already used (except as noted in 7.2).",
+                "Annual subscription fees requested more than 30 days after initial purchase.",
+                "Accounts terminated for violation of these Terms or the Acceptable Use Policy.",
+              ],
+            },
+          ],
+        },
       ],
     },
     {
-      heading: "Third-Party Services",
-      paragraphs: [
-        "The Service depends on third-party AI model providers, cloud infrastructure and payment processors. Your use of those providers may also be subject to their own terms and privacy policies. We are not responsible for the content, availability or practices of third-party services, and we do not control how third parties use data you choose to send to them.",
+      heading: "Billing Disputes",
+      blocks: [
+        {
+          type: "p",
+          text: "If you believe there is an error in a charge, please contact us at hello@buzzyai.video before disputing with your bank. We commit to responding within 2 business days and resolving confirmed billing errors within 5 business days.",
+        },
       ],
     },
     {
-      heading: "Intellectual Property",
-      paragraphs: [
-        "The Service, its design, software and branding are owned by us or our licensors and are protected by intellectual property laws. These Terms do not grant you any right to use our trademarks or to copy the Service beyond what is necessary to use it as intended.",
+      heading: "AI Output & Intellectual Property",
+      blocks: [
+        {
+          type: "sub",
+          heading: "9.1 Ownership of Outputs",
+          blocks: [
+            {
+              type: "p",
+              text: "Subject to these Terms, AI-generated content produced in response to your inputs (\"Outputs\") is owned by you. You may use Outputs for any lawful purpose consistent with Section 10.",
+            },
+          ],
+        },
+        {
+          type: "sub",
+          heading: "9.2 Input License",
+          blocks: [
+            {
+              type: "p",
+              text: "By submitting content to the Service (\"Inputs\"), you grant BuzzyAI.Video a limited, non-exclusive license to process your Inputs solely to deliver the Service. We do not use your Inputs to train AI models without your explicit consent.",
+            },
+          ],
+        },
+        {
+          type: "sub",
+          heading: "9.3 Third-Party AI Model Dependency",
+          blocks: [
+            {
+              type: "p",
+              text: "Our Service uses third-party AI model providers including Veo, Kling, Seedance, Runway and Google models. Outputs may be influenced by these providers' models. We do not guarantee specific output quality and accept no liability for outputs generated by third-party models.",
+            },
+          ],
+        },
+        {
+          type: "sub",
+          heading: "9.4 Accuracy of AI Outputs",
+          blocks: [
+            {
+              type: "p",
+              text: "AI-generated content may contain errors or inaccuracies. You are solely responsible for reviewing and verifying Outputs before relying on them.",
+            },
+          ],
+        },
       ],
     },
     {
-      heading: "Disclaimer of Warranties",
-      paragraphs: [
-        "The Service is provided \"as is\" and \"as available\". To the maximum extent permitted by law, we disclaim all warranties, express or implied, including merchantability, fitness for a particular purpose and non-infringement. We do not warrant that the Service will be uninterrupted, error-free, or that outputs will meet your expectations.",
+      heading: "Acceptable Use Policy",
+      blocks: [
+        {
+          type: "sub",
+          heading: "10.1 Permitted Uses",
+          blocks: [
+            {
+              type: "p",
+              text: "You may use the Service only for lawful purposes in accordance with these Terms.",
+            },
+          ],
+        },
+        {
+          type: "sub",
+          heading: "10.2 Prohibited Uses",
+          blocks: [
+            {
+              type: "p",
+              text: "You agree NOT to use the Service to generate, upload, or distribute any of the following:",
+            },
+            {
+              type: "table",
+              headers: ["Category", "Prohibited content"],
+              rows: [
+                ["Pornography / NSFW", "Sexually explicit or nude content, including sexualized depictions."],
+                ["Violence / gore", "Graphic violence, gore, or content promoting harm to others."],
+                ["Hate speech", "Content attacking or demeaning people based on protected characteristics."],
+                ["Child-unsafe content (CSAM)", "Any sexualization of minors or content violating child protection laws."],
+                ["Deepfakes / impersonation", "AI-synthesized audio, video, or images that impersonate real individuals or deceive viewers about their origin or authenticity — including face swap, nudify, two-person intimate-scene synthesis, and fabricated statements or actions."],
+                ["Copyright / trademark infringement", "Content that infringes the intellectual property or privacy rights of any third party."],
+              ],
+            },
+            {
+              type: "p",
+              text: "You also agree NOT to produce malware, phishing content, or cyberattack tools; circumvent or interfere with security features of the Service; resell or sub-license access to the Service without prior written approval; or violate any applicable law, regulation, or card network rule.",
+            },
+          ],
+        },
+        {
+          type: "sub",
+          heading: "10.3 AI-Specific Prohibitions",
+          blocks: [
+            {
+              type: "bullets",
+              items: [
+                "Use Service inputs, outputs, model responses, or any derivative thereof to train, fine-tune, benchmark, distil, or otherwise develop any AI or machine-learning model that competes, directly or indirectly, with the Service or BuzzyAI.Video's products.",
+                "Systematically scrape, extract, or harvest model outputs at scale for purposes other than your own authorized use of the Service.",
+                "Represent AI-generated outputs as the work of a human professional (e.g., a licensed doctor, lawyer, or financial adviser) in contexts where such misrepresentation could cause harm.",
+                "Remove or conceal any AI-generation labels or disclosures we apply to Outputs.",
+              ],
+            },
+          ],
+        },
+        {
+          type: "sub",
+          heading: "10.4 Real-Person Uploads",
+          blocks: [
+            {
+              type: "p",
+              text: "If the Service allows you to upload photos or voice recordings of real people, you represent that the material is your own or that you have obtained permission from the people depicted. You may not upload another person's photo or voice without their consent. The Service does not offer face-swap, nudify, or intimate-scene synthesis features.",
+            },
+          ],
+        },
+        {
+          type: "sub",
+          heading: "10.5 Reporting & Enforcement",
+          blocks: [
+            {
+              type: "p",
+              text: "We screen user prompts through automated content-safety filtering and apply a moderation step to generated outputs. If you encounter content that violates this policy, report it to hello@buzzyai.video. We review reports and may take enforcement actions including content removal, credit forfeiture, account suspension, or permanent bans. Users may appeal an enforcement decision by writing to the same address.",
+            },
+          ],
+        },
       ],
     },
     {
-      heading: "Limitation of Liability",
-      paragraphs: [
-        "To the maximum extent permitted by law, we and our suppliers are not liable for indirect, incidental, special or consequential damages, or for lost profits, data or goodwill, arising out of your use of the Service. Our total liability for any claim relating to the Service is limited to the amount you paid us for the Service in the twelve months before the claim arose. These limits do not apply where liability cannot be limited by law, such as for fraud or wilful misconduct.",
+      heading: "Data, Privacy & Security",
+      blocks: [
+        {
+          type: "p",
+          text: "Your use of the Service is governed by our Privacy Policy at https://www.buzzyai.video/privacy. Payment card data is processed exclusively by our PCI-DSS certified payment processor (Waffo Pancake) and is not stored on our servers. Account data is retained for 90 days following cancellation, then deleted.",
+        },
       ],
     },
     {
-      heading: "Termination",
-      paragraphs: [
-        "You may stop using the Service and close your account at any time. We may suspend or terminate your access if you breach these Terms, if required by law, or if continuing to provide the Service is no longer feasible. On termination, the provisions that by their nature should survive (including ownership, disclaimers, liability limits and dispute terms) remain in effect.",
+      heading: "Disclaimers & Limitation of Liability",
+      blocks: [
+        {
+          type: "sub",
+          heading: "12.1 Disclaimer of Warranties",
+          blocks: [
+            {
+              type: "p",
+              text: "THE SERVICE IS PROVIDED \"AS IS\" AND \"AS AVAILABLE\" WITHOUT WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR ACCURACY OF AI OUTPUTS.",
+            },
+          ],
+        },
+        {
+          type: "sub",
+          heading: "12.2 AI-Generated Content Disclaimer",
+          blocks: [
+            {
+              type: "callout",
+              text: "AI GENERATED CONTENT DISCLAIMER — Outputs may be inaccurate, incomplete, or outdated. Do not rely on them for legal, medical, financial, or other professional advice. Always verify AI-generated content with a qualified professional before acting on it.",
+            },
+          ],
+        },
+        {
+          type: "sub",
+          heading: "12.3 Limitation of Liability",
+          blocks: [
+            {
+              type: "p",
+              text: "TO THE MAXIMUM EXTENT PERMITTED BY LAW, BUZZYAI.VIDEO SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES. OUR TOTAL LIABILITY SHALL NOT EXCEED THE AMOUNT YOU PAID IN THE 12 MONTHS PRECEDING THE EVENT GIVING RISE TO THE CLAIM.",
+            },
+          ],
+        },
       ],
     },
     {
-      heading: "Changes to These Terms",
-      paragraphs: [
-        "We may update these Terms from time to time. The current version is always available at https://www.buzzyai.video/terms with the \"Last updated\" date above. If we make material changes we will take reasonable steps to notify you, and continued use of the Service after changes take effect means you accept the updated Terms.",
+      heading: "Term & Termination",
+      blocks: [
+        {
+          type: "p",
+          text: "These Terms remain effective while you use the Service. We may suspend or terminate your account if you materially breach these Terms, we suspect fraudulent activity, or as required by law. If we terminate for reasons other than your breach, we will provide a pro-rated refund for any unused prepaid period. You may delete your account at any time by contacting hello@buzzyai.video.",
+        },
       ],
     },
     {
-      heading: "Governing Law and Contact",
-      paragraphs: [
-        "These Terms are governed by applicable law, without limiting any consumer protections you have in your country of residence. If you have questions about these Terms, contact us at hello@buzzyai.video.",
+      heading: "Governing Law & Dispute Resolution",
+      blocks: [
+        {
+          type: "p",
+          text: "These Terms are governed by applicable law, without limiting any mandatory consumer protections you have in your country of residence. Before initiating any formal proceedings, please contact us at hello@buzzyai.video to attempt informal resolution.",
+        },
+      ],
+    },
+    {
+      heading: "General Provisions",
+      blocks: [
+        {
+          type: "p",
+          text: "We may update these Terms at any time. Material changes will be notified by email at least 14 days before the effective date. Continued use constitutes acceptance. If any provision is found unenforceable, the remainder continues in full effect.",
+        },
+      ],
+    },
+    {
+      heading: "Contact Information",
+      blocks: [
+        {
+          type: "p",
+          text: "For any questions about these Terms or billing, please contact us:",
+        },
+        {
+          type: "table",
+          headers: ["Purpose", "Channel"],
+          rows: [
+            ["General Support", "hello@buzzyai.video"],
+            ["Billing", "hello@buzzyai.video"],
+            ["Refunds", "hello@buzzyai.video"],
+            ["Cancel Subscription", "Account Settings, or hello@buzzyai.video"],
+            ["Legal & Privacy", "hello@buzzyai.video"],
+            ["Security", "hello@buzzyai.video"],
+            ["Website", "https://www.buzzyai.video"],
+          ],
+        },
+        {
+          type: "p",
+          text: "By using the Service or checking \"I agree\" at checkout, you acknowledge and agree to these Terms.",
+        },
       ],
     },
   ],
+  footerNote:
+    "These Terms of Service are provided for general reference and do not constitute legal advice. We recommend review by a qualified legal professional in your target market before publication.",
 };
 
 export default function TermsPage() {

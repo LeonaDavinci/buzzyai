@@ -17,7 +17,7 @@
   margin-top: 6px;
 }
 
-.updated {
+.meta {
   color: var(--text-3);
   font-size: 13px;
   margin-top: 12px;
@@ -129,6 +129,75 @@
   height: 6px;
   border-radius: 50%;
   background: var(--gold);
+}
+
+.sub {
+  margin: 18px 0 4px;
+}
+
+.sub h3 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+
+.callout {
+  margin: 16px 0;
+  padding: 16px 18px;
+  background: var(--gold-soft);
+  border: 1px solid var(--border-gold);
+  border-left: 3px solid var(--gold);
+  border-radius: 10px;
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.7;
+  font-weight: 600;
+}
+
+.tableWrap {
+  margin: 16px 0 20px;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.tableWrap table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.tableWrap th,
+.tableWrap td {
+  text-align: left;
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  line-height: 1.55;
+}
+
+.tableWrap th {
+  background: var(--panel);
+  color: var(--gold);
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.tableWrap td {
+  color: var(--text-2);
+}
+
+.tableWrap tr:last-child td {
+  border-bottom: none;
+}
+
+.footerNote {
+  color: var(--text-3);
+  font-size: 13px;
+  line-height: 1.7;
+  margin: 8px 0 24px;
+  font-style: italic;
 }
 
 .contact {

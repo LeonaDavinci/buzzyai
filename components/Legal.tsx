@@ -1,19 +1,77 @@
 import Link from "next/link";
 import styles from "./Legal.module.css";
 
+export type LegalBlock =
+  | { type: "p"; text: string }
+  | { type: "bullets"; items: string[] }
+  | { type: "table"; headers: string[]; rows: string[][] }
+  | { type: "sub"; heading: string; blocks: LegalBlock[] }
+  | { type: "callout"; text: string };
+
 export type LegalSection = {
   heading: string;
-  paragraphs?: string[];
-  bullets?: string[];
+  blocks: LegalBlock[];
 };
 
 export type LegalDoc = {
   eyebrow: string;
   title: string;
+  legalName: string;
+  version: string;
   updated: string;
   intro: string;
   sections: LegalSection[];
+  footerNote?: string;
 };
+
+function Block({ block }: { block: LegalBlock }) {
+  switch (block.type) {
+    case "p":
+      return <p>{block.text}</p>;
+    case "bullets":
+      return (
+        <ul>
+          {block.items.map((b, i) => (
+            <li key={i}>{b}</li>
+          ))}
+        </ul>
+      );
+    case "table":
+      return (
+        <div className={styles.tableWrap}>
+          <table>
+            <thead>
+              <tr>
+                {block.headers.map((h, i) => (
+                  <th key={i}>{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {block.rows.map((row, i) => (
+                <tr key={i}>
+                  {row.map((cell, j) => (
+                    <td key={j}>{cell}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
+    case "sub":
+      return (
+        <div className={styles.sub}>
+          <h3>{block.heading}</h3>
+          {block.blocks.map((b, i) => (
+            <Block key={i} block={b} />
+          ))}
+        </div>
+      );
+    case "callout":
+      return <div className={styles.callout}>{block.text}</div>;
+  }
+}
 
 export default function Legal({ doc }: { doc: LegalDoc }) {
   return (
@@ -22,7 +80,10 @@ export default function Legal({ doc }: { doc: LegalDoc }) {
         <div className="container">
           <span className="eyebrow">{doc.eyebrow}</span>
           <h1 className={styles.title}>{doc.title}</h1>
-          <p className={styles.updated}>Last updated: {doc.updated}</p>
+          <p className={styles.meta}>
+            {doc.legalName} &nbsp;·&nbsp; {doc.version} &nbsp;·&nbsp; Last
+            updated: {doc.updated}
+          </p>
           <p className={styles.intro}>{doc.intro}</p>
         </div>
       </section>
@@ -48,18 +109,13 @@ export default function Legal({ doc }: { doc: LegalDoc }) {
                 <h2>
                   <span className={styles.num}>{i + 1}.</span> {s.heading}
                 </h2>
-                {s.paragraphs?.map((p, j) => (
-                  <p key={j}>{p}</p>
+                {s.blocks.map((b, j) => (
+                  <Block key={j} block={b} />
                 ))}
-                {s.bullets && (
-                  <ul>
-                    {s.bullets.map((b, j) => (
-                      <li key={j}>{b}</li>
-                    ))}
-                  </ul>
-                )}
               </article>
             ))}
+
+            {doc.footerNote && <p className={styles.footerNote}>{doc.footerNote}</p>}
 
             <div className={styles.contact}>
               Questions about this document?{" "}
