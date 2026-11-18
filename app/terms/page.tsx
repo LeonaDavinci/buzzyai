@@ -21,8 +21,8 @@ const doc: LegalDoc = {
   eyebrow: "Legal",
   title: "Terms of Service — AI-Powered Services",
   legalName: "BuzzyAI.Video",
-  version: "Version 1.0",
-  updated: "November 16, 2026",
+  version: "Version 1.1",
+  updated: "November 18, 2026",
   intro:
     "These Terms of Service (\"Terms\") govern your access to and use of BuzzyAI.Video, an AI-powered video directing workspace available at https://www.buzzyai.video (the \"Service\"). By creating an account, subscribing to a plan, or otherwise using the Service, you agree to these Terms and to our Privacy Policy. If you do not agree, you may not use the Service.",
   sections: [
@@ -122,11 +122,36 @@ const doc: LegalDoc = {
       blocks: [
         {
           type: "p",
-          text: "We offer subscription plans for access to the Service (currently Starter, Creator and Studio), with monthly and annual billing options and a monthly allowance of generations. For current plan details and pricing, please visit https://www.buzzyai.video/pricing.",
+          text: "We offer subscription plans for access to the Service (currently Starter, Creator and Studio), each with a monthly allowance of generations. Every plan is available with either monthly or annual billing. The amounts below are the exact amounts charged, excluding applicable taxes; the same figures are displayed on our homepage, pricing page and checkout page at https://www.buzzyai.video/pricing.",
+        },
+        {
+          type: "table",
+          headers: [
+            "Plan",
+            "Monthly billing",
+            "Annual billing (charged once a year)",
+          ],
+          rows: [
+            [
+              "Starter",
+              "$12 per month, billed monthly",
+              "$120 once a year (equivalent to $10 per month)",
+            ],
+            [
+              "Creator",
+              "$25 per month, billed monthly",
+              "$240 once a year (equivalent to $20 per month)",
+            ],
+            [
+              "Studio",
+              "$49 per month, billed monthly",
+              "$468 once a year (equivalent to $39 per month)",
+            ],
+          ],
         },
         {
           type: "p",
-          text: "We reserve the right to modify plan features or introduce new plans at any time. Price changes are governed by Section 5.1.",
+          text: "Monthly plans are charged once every month; annual plans are charged once every year for the full yearly total shown above. The per-month price displayed for an annual plan is the yearly total divided by 12, not an additional monthly charge. Annual billing is cheaper per month than monthly billing. The plan, billing cycle and amount you select are repeated on the checkout page before payment. We reserve the right to modify plan features or introduce new plans at any time. Price changes are governed by Section 5.1.",
         },
       ],
     },
@@ -159,7 +184,7 @@ const doc: LegalDoc = {
           blocks: [
             {
               type: "p",
-              text: "Payments are processed by our payment processor and Merchant of Record, Waffo Pancake. Your card details are submitted directly to Waffo Pancake's PCI-DSS compliant checkout and are not stored on our servers. The name that will appear on your card statement is BuzzyAI.Video / Waffo.",
+              text: "Payments for all BuzzyAI.Video subscriptions are processed exclusively by our payment processor and Merchant of Record, Waffo Pancake. Waffo Pancake is the sole payment and checkout channel used by this website; no other payment processor collects subscription payments on our behalf. Your card details are submitted directly to Waffo Pancake's PCI-DSS compliant checkout and are not stored on our servers. The name that will appear on your card statement is BuzzyAI.Video / Waffo. The same payment channel is identified on our homepage, pricing page and checkout page.",
             },
           ],
         },
@@ -214,7 +239,7 @@ const doc: LegalDoc = {
           blocks: [
             {
               type: "p",
-              text: "Due to the immediate and intangible nature of our digital services, subscription fees are generally non-refundable, except as expressly stated below.",
+              text: "Due to the immediate and intangible nature of our digital services, subscription fees are generally non-refundable, except as expressly stated in these Terms. Our money-back guarantee is a 3-day window from the date of purchase; we do not offer a 7-day or 30-day money-back guarantee. The same 3-day refund commitment is stated on our pricing and checkout pages.",
             },
           ],
         },
@@ -223,12 +248,16 @@ const doc: LegalDoc = {
           heading: "7.2 Eligible Refunds",
           blocks: [
             {
+              type: "p",
+              text: "Our refund commitment is: if you are unable to use this website's Service to generate videos, you may request a full refund within 3 days of your purchase. This is the only money-back guarantee we offer.",
+            },
+            {
               type: "bullets",
               items: [
-                "New subscriber 7-day guarantee: a full refund is available to first-time subscribers within 7 days of the initial charge, provided usage has not exceeded 50% of the plan's monthly generation quota.",
+                "3-day guarantee: a full refund is available when you are unable to use the Service to generate videos and you submit your request within 3 days of the purchase date. No usage-quota condition applies to this guarantee.",
                 "Duplicate charge: a full refund for any billing error resulting in a duplicate charge.",
                 "Verified service outage (≥72 hours): a pro-rated credit or refund for extended outages within our control.",
-                "Statutory rights: where applicable law grants withdrawal or refund rights (for example, the 14-day withdrawal right in the EU/UK), those rights are preserved.",
+                "Statutory rights: nothing in this Section limits any non-waivable withdrawal or refund right granted by applicable law (for example, the 14-day withdrawal right in the EU/UK). Such statutory rights apply independently of, and are not shortened by, the 3-day guarantee above.",
               ],
             },
           ],
@@ -239,7 +268,7 @@ const doc: LegalDoc = {
           blocks: [
             {
               type: "p",
-              text: "To request a refund, contact us at hello@buzzyai.video with your account email, transaction ID, and reason. We acknowledge requests within 2 business days and process eligible refunds within 5–10 business days.",
+              text: "To request a refund, contact us at hello@buzzyai.video within 3 days of your purchase with your account email, transaction ID, purchase date, and a short description of why you were unable to generate videos. We acknowledge requests within 2 business days and process eligible refunds within 5–10 business days.",
             },
           ],
         },
@@ -250,8 +279,9 @@ const doc: LegalDoc = {
             {
               type: "bullets",
               items: [
-                "Fees for subscription periods already used (except as noted in 7.2).",
-                "Annual subscription fees requested more than 30 days after initial purchase.",
+                "Requests under the 3-day guarantee submitted more than 3 days after the initial purchase.",
+                "Fees for subscription periods already used, except as expressly noted in Section 7.2.",
+                "Requests based only on dissatisfaction with output quality where the Service was in fact able to generate videos.",
                 "Accounts terminated for violation of these Terms or the Acceptable Use Policy.",
               ],
             },

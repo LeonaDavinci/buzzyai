@@ -2,23 +2,44 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
-import { plans } from "@/lib/data";
+import {
+  plans,
+  usd,
+  monthlyEquivalent,
+  annualSaving,
+  billedNote,
+  PAYMENT_NOTE,
+  REFUND_NOTE,
+} from "@/lib/data";
+import type { BillingCycle } from "@/lib/data";
 import styles from "./PaymentLanding.module.css";
 
-type CheckoutKey = string;
-
-export default function PaymentLanding({ plan }: { plan?: string }) {
-  const key = ((plan ?? "creator").toLowerCase()) as CheckoutKey;
-  const data = plans.find((p) => p.name.toLowerCase() === key) ?? plans.find((p) => p.featured) ?? plans[0];
+export default function PaymentLanding({
+  plan,
+  billing,
+}: {
+  plan?: string;
+  billing?: string;
+}) {
+  const key = (plan ?? "creator").toLowerCase();
+  const data =
+    plans.find((p) => p.name.toLowerCase() === key) ??
+    plans.find((p) => p.featured) ??
+    plans[0];
+  // The cycle is passed through from /pricing so the amount on this checkout
+  // page is exactly the amount the visitor just saw on the pricing page.
+  const cycle: BillingCycle = billing === "monthly" ? "monthly" : "yearly";
+  const perMonth = monthlyEquivalent(data, cycle);
+  const saving = annualSaving(data);
 
   // Fire tracking on page load (begin_checkout) — this is what tells you a
   // user actually clicked "Continue to secure checkout" from /pricing.
   useEffect(() => {
-    track("begin_checkout", data.name);
-  }, [data.name]);
+    track("begin_checkout", data.name, cycle);
+  }, [data.name, cycle]);
 
   const handlePay = () => {
-    track("payment_click", data.name);
+    track("payment_click", data.name, cycle);
   };
 
   return (
@@ -38,14 +59,22 @@ export default function PaymentLanding({ plan }: { plan?: string }) {
             </div>
             <p className={styles.planDesc}>{data.desc}</p>
             <div className={styles.priceRow}>
-              <span className={styles.price}>
-                {data.priceYearly ? data.priceYearly : data.priceMonthly}
+              <span className={styles.price}>{usd(perMonth)}</span>
+              <span className={styles.unit}>
+                {data.unit} ·{" "}
+                {cycle === "yearly" ? "annual billing" : "monthly billing"}
               </span>
-              <span className={styles.unit}>/mo billed annually</span>
-              {data.priceYearly && (
-                <s className={styles.strike}>{data.priceMonthly}</s>
+              {cycle === "yearly" && (
+                <s className={styles.strike}>{usd(data.priceMonthly)}/mo</s>
               )}
             </div>
+            <p className={styles.billed}>{billedNote(data, cycle)}</p>
+            {cycle === "yearly" && (
+              <p className={styles.billed}>
+                That is {usd(data.priceYearly)}/mo, saving {saving}% versus
+                paying monthly.
+              </p>
+            )}
             <ul className={styles.features}>
               {data.features.map((f) => (
                 <li key={f}>
@@ -61,8 +90,13 @@ export default function PaymentLanding({ plan }: { plan?: string }) {
             className={`btn btn-primary ${styles.payBtn}`}
             onClick={handlePay}
           >
-            Pay with Stripe
+            Continue
           </Link>
+
+          <p className={styles.note}>
+            {PAYMENT_NOTE}. {REFUND_NOTE}. Cancel anytime. Full refund terms are
+            in our <Link href="/terms">Terms of Service</Link>.
+          </p>
 
           <p className={styles.note}>
             We&apos;re scaling to meet record demand and have temporarily paused
@@ -80,14 +114,14 @@ export default function PaymentLanding({ plan }: { plan?: string }) {
 }
 
 // Send the event to both GA4 (if configured) and our /api/track server log.
-function track(event: string, planName: string) {
+function track(event: string, planName: string, cycle: BillingCycle) {
   if (typeof window === "undefined") return;
   const gtag = (window as unknown as { gtag?: (...a: unknown[]) => void }).gtag;
-  if (gtag) gtag("event", event, { plan: planName, currency: "USD" });
+  if (gtag) gtag("event", event, { plan: planName, billing: cycle, currency: "USD" });
   fetch("/api/track", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ event, plan: planName }),
+    body: JSON.stringify({ event, plan: planName, billing: cycle }),
     keepalive: true,
   }).catch(() => {});
 }

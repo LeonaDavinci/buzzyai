@@ -1,13 +1,23 @@
 "use client";
 
 import { useState } from "react";
-import { plans } from "@/lib/data";
+import {
+  plans,
+  usd,
+  monthlyEquivalent,
+  annualSaving,
+  billedNote,
+  MAX_ANNUAL_SAVING,
+  PAYMENT_NOTE,
+  REFUND_NOTE,
+} from "@/lib/data";
+import type { BillingCycle } from "@/lib/data";
 import styles from "./Pricing.module.css";
 
-type Billing = "monthly" | "yearly";
-
 export default function Pricing() {
-  const [billing, setBilling] = useState<Billing>("monthly");
+  // Keep the default cycle identical to /pricing and /payment so the same plan
+  // always shows the same price no matter where a visitor lands.
+  const [billing, setBilling] = useState<BillingCycle>("yearly");
 
   return (
     <section className="section" id="pricing">
@@ -17,7 +27,8 @@ export default function Pricing() {
           Pick the <span className="gold">plan that fits your craft</span>
         </h2>
         <p className="section-sub">
-          From free trials to studio collaboration, scale up as you create more.
+          Every plan is available with monthly or annual billing. Annual plans
+          are charged once a year at a lower per-month rate.
         </p>
 
         {/* ShipAny-style billing toggle */}
@@ -43,15 +54,14 @@ export default function Pricing() {
             onClick={() => setBilling("yearly")}
           >
             Annually
-            <span className={styles.save}>Save 20%</span>
+            <span className={styles.save}>Save up to {MAX_ANNUAL_SAVING}%</span>
           </button>
         </div>
 
         <div className={styles.grid}>
           {plans.map((p) => {
-            const showYearly = billing === "yearly" && p.priceYearly;
-            const price = showYearly ? p.priceYearly! : p.priceMonthly;
-            const original = billing === "monthly" ? p.priceYearly : p.priceMonthly;
+            const perMonth = monthlyEquivalent(p, billing);
+            const saving = annualSaving(p);
             return (
               <div
                 key={p.name}
@@ -60,12 +70,14 @@ export default function Pricing() {
                 {p.featured && <span className={styles.tag}>Most popular</span>}
                 <h3 className={styles.name}>{p.name}</h3>
                 <div className={styles.priceRow}>
-                  <span className={styles.price}>{price}</span>
+                  <span className={styles.price}>{usd(perMonth)}</span>
                   <span className={styles.unit}>{p.unit}</span>
                 </div>
-                {original && original !== price && (
+                <span className={styles.billedNote}>{billedNote(p, billing)}</span>
+                {billing === "yearly" && (
                   <span className={styles.billedNote}>
-                    <s className={styles.strike}>{original}</s> billed {billing}
+                    <s className={styles.strike}>{usd(p.priceMonthly)}/mo</s>{" "}
+                    monthly · save {saving}%
                   </span>
                 )}
                 <p className={styles.desc}>{p.desc}</p>
@@ -92,7 +104,12 @@ export default function Pricing() {
 
         <p className={styles.footnote}>
           All plans include the Director Canvas, storyboard, multi-angle camera
-          control and real-time relighting. Cancel anytime.
+          control and real-time relighting. These prices are the same on the
+          pricing page and at checkout. Cancel anytime.
+        </p>
+        <p className={styles.footnote}>
+          {PAYMENT_NOTE} · {REFUND_NOTE}. Full refund terms are in our{" "}
+          <a href="/terms">Terms of Service</a>.
         </p>
       </div>
     </section>
