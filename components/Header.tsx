@@ -12,7 +12,7 @@ export default function Header() {
         </a>
         <nav className={styles.nav}>
           <a href="/#models">Models</a>
-          <a href="/director">Director Canvas</a>
+          <a href="https://gen.buzzyai.video">Director Canvas</a>
           <a href="/#showcase">Showcase</a>
           <a href="/#tools">Creative Tools</a>
           <a href="/skills">Skills</a>

@@ -253,7 +253,7 @@ export default function BlogPage() {
                 Put what you just read into practice. Open the Director Canvas
                 and start your first AI-directed clip today.
               </p>
-              <a href="/director" className="btn btn-primary">
+              <a href="https://gen.buzzyai.video" className="btn btn-primary">
                 Open Director Canvas
               </a>
             </div>

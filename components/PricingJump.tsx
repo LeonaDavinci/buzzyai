@@ -1,11 +1,10 @@
 "use client";
 
-import Link from "next/link";
 import type { ReactNode } from "react";
 
 /**
- * Internal CTA button — jumps to this site's own pricing section.
- * (Never link to third-party pricing pages: that reads as impersonation.)
+ * Work-entry CTA — hands the user off to the gen app, which owns the login,
+ * workspace and creation flow. The www site is promotional only.
  */
 export default function PricingJump({
   className = "btn btn-primary",
@@ -15,8 +14,8 @@ export default function PricingJump({
   children: ReactNode;
 }) {
   return (
-    <Link href="/pricing" className={className}>
+    <a href="https://gen.buzzyai.video" className={className}>
       {children}
-    </Link>
+    </a>
   );
 }

@@ -193,7 +193,7 @@ export default function SkillsPage() {
               workflows, this is everything we have learned from directing
               thousands of AI clips.
             </p>
-            <a href="/director" className="btn btn-primary">
+            <a href="https://gen.buzzyai.video" className="btn btn-primary">
               Open Director Canvas
             </a>
           </div>
@@ -281,7 +281,7 @@ export default function SkillsPage() {
                 Open the Director Canvas and try every technique above on your
                 own scene. Your first directed clip is free.
               </p>
-              <a href="/director" className="btn btn-primary">
+              <a href="https://gen.buzzyai.video" className="btn btn-primary">
                 Start directing now
               </a>
             </div>

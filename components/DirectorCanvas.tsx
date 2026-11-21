@@ -1,4 +1,3 @@
-import Link from "next/link";
 import styles from "./DirectorCanvas.module.css";
 
 const points = [
@@ -31,9 +30,9 @@ export default function DirectorCanvas() {
                 </li>
               ))}
             </ul>
-            <Link href="/director" className="btn btn-primary">
+            <a href="https://gen.buzzyai.video" className="btn btn-primary">
               Open the Director Canvas
-            </Link>
+            </a>
           </div>
           <div className={styles.visual}>
             <img

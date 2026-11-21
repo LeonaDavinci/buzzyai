@@ -117,7 +117,7 @@ export default function StoryboardCreator() {
                 Render with 11+ models while keeping the same visual DNA
               </li>
             </ul>
-            <a href="/director" className="btn btn-primary">
+            <a href="https://gen.buzzyai.video" className="btn btn-primary">
               Try it →
             </a>
           </div>

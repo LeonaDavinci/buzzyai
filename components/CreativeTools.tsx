@@ -64,7 +64,7 @@ export default function CreativeTools() {
                 <span className={styles.index}>{t.index}</span>
                 <h3 className={styles.title}>{t.title}</h3>
                 <p className={styles.desc}>{t.desc}</p>
-                <a href="/director" className="btn btn-ghost">
+                <a href="https://gen.buzzyai.video" className="btn btn-ghost">
                   Try it
                 </a>
               </div>

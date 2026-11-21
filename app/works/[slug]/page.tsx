@@ -108,7 +108,7 @@ export default function WorkPage({ params }: { params: { slug: string } }) {
                 </li>
               </ul>
 
-              <a href="/director" className="btn btn-primary">
+              <a href="https://gen.buzzyai.video" className="btn btn-primary">
                 Make your own
               </a>
             </div>

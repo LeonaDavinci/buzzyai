@@ -18,7 +18,7 @@ export default function Hero() {
           shot.
         </p>
         <div className={styles.cta}>
-          <a href="/director" className="btn btn-primary">
+          <a href="https://gen.buzzyai.video" className="btn btn-primary">
             Try the storyboard canvas
           </a>
           <a href="#storyboard" className="btn btn-ghost">
