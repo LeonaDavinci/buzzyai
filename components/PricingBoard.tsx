@@ -26,13 +26,17 @@ export default function PricingBoard() {
   const perMonth = monthlyEquivalent(plan, billing);
   const saving = annualSaving(plan);
 
-  // Carry the selected cycle through to the checkout page so the amount shown
-  // there is exactly the amount shown here.
-  const checkoutHref = plan.checkoutUrl
-    ? plan.checkoutUrl.startsWith("/")
-      ? `${plan.checkoutUrl}&billing=${billing}`
-      : plan.checkoutUrl
-    : plan.href ?? "#";
+  // Carry the selected cycle through to checkout so the amount shown there is
+  // exactly the amount shown here. Works for internal /payment links and for
+  // the external gen-app payment URL alike.
+  const checkoutHref = (() => {
+    if (!plan.checkoutUrl) return plan.href ?? "#";
+    const base = plan.checkoutUrl;
+    const isInternalOrGen =
+      base.startsWith("/") || base.includes("gen.buzzyai.video/payment");
+    if (!isInternalOrGen) return base;
+    return `${base}${base.includes("?") ? "&" : "?"}billing=${billing}`;
+  })();
 
   const scrollToCheckout = () => {
     document.getElementById("checkout")?.scrollIntoView({ behavior: "smooth" });

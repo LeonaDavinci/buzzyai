@@ -75,17 +75,22 @@ export const REFUND_TERMS =
   "If you are unable to use the Service to generate videos, you may request a full refund within 3 days of your purchase.";
 
 /**
- * Checkout destinations. Until Waffo-hosted checkout URLs are configured,
- * every paid plan goes through the internal /payment landing page, which
- * shows exactly the same plan, cycle and amount as the homepage and /pricing.
+ * Checkout destinations.
+ *
+ * The www site is promotional only — it has no accounts, no dashboard and no
+ * payment processing. Every paid plan therefore hands off to the gen app
+ * (https://gen.buzzyai.video), which owns login, billing and the workspace.
+ * Waffo-hosted checkout URLs override this default once configured.
  */
+export const GEN_APP_URL = "https://gen.buzzyai.video";
+
 export const CHECKOUT = {
   starter:
-    process.env.NEXT_PUBLIC_WAFFO_STARTER_URL ?? "/payment?plan=starter",
+    process.env.NEXT_PUBLIC_WAFFO_STARTER_URL ?? `${GEN_APP_URL}/payment?plan=starter`,
   creator:
-    process.env.NEXT_PUBLIC_WAFFO_CREATOR_URL ?? "/payment?plan=creator",
+    process.env.NEXT_PUBLIC_WAFFO_CREATOR_URL ?? `${GEN_APP_URL}/payment?plan=creator`,
   studio:
-    process.env.NEXT_PUBLIC_WAFFO_STUDIO_URL ?? "/payment?plan=studio",
+    process.env.NEXT_PUBLIC_WAFFO_STUDIO_URL ?? `${GEN_APP_URL}/payment?plan=studio`,
 };
 
 export const plans: Plan[] = [
