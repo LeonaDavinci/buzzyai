@@ -21,7 +21,7 @@ const cols: FooterCol[] = [
       { label: "Tutorials", href: "/" },
       { label: "Community", href: "/" },
       { label: "Developer API", href: "/" },
-      { label: "FAQ", href: "/#faq" },
+      { label: "FAQ", href: "/faq" },
       { label: "Blog", href: "/blog" },
     ],
   },

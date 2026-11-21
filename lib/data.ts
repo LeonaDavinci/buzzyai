@@ -206,34 +206,40 @@ export interface Faq {
 
 export const faqs: Faq[] = [
   {
-    q: "Which AI video models are supported?",
-    a: "We aggregate 11+ leading video and image models including Seedance, Kling, Runway, Veo, Google Omni, Hailuo, Wan, and Pixverse. Switch between them freely from one interface.",
+    q: "What is BuzzyAI.Video?",
+    a: "BuzzyAI.Video is an AI viral video maker for text-to-video, image-to-video, music videos, 2-person rap videos and product ads. This site is the showcase and pricing hub; all creating happens in your workspace at gen.buzzyai.video.",
+  },
+  {
+    q: "How do I start creating videos?",
+    a: "Create an account or sign in at gen.buzzyai.video — with email and password, or one-click Google sign-in. Your workspace, projects and generations all live there.",
   },
   {
     q: "Can I use it without any filmmaking background?",
-    a: "Yes. BuzzyAI.Video acts as your AI director. With storyboard generation, visual camera control, and real-time lighting, anyone can produce cinematic shorts.",
+    a: "Yes. Every plan includes the Director Canvas with storyboard generation, multi-angle camera control and real-time relighting, so anyone can direct cinematic shorts — no filmmaking experience required.",
   },
   {
-    q: "Do you support text-to-video and image-to-video?",
-    a: "Both. Type a prompt to generate video, or upload a reference image for image-to-video creation.",
+    q: "Which AI models are supported?",
+    a: "Starter includes core model access; Creator and Studio unlock all available models with a priority render queue on Creator and above. The model lineup is refreshed regularly inside your workspace.",
   },
   {
-    q: "What is the maximum output quality and length?",
-    a: "Flagship models support up to 4K quality, 30-second clips per generation, and project management for up to 50 assets.",
+    q: "What video quality and output volume do I get?",
+    a: "Starter: 720p video and 4K images, about 83 videos a month. Creator and Studio: 2K video and 4K images, about 150 and 250 videos a month respectively. Video counts are monthly estimates and vary by model, resolution and clip length — no plan includes unlimited generations.",
   },
   {
-    q: "How do you keep characters consistent across shots?",
-    a: "The Storyboard Creator records characters, objects, and locations, and automatically maintains consistency when generating across scenes.",
+    q: "How do credits work?",
+    a: "Each plan includes a monthly credit allowance: 2,000 credits on Starter, 3,600 on Creator and 6,000 on Studio. Every generation consumes credits based on the model, resolution and clip length, and your allowance resets each billing cycle.",
   },
   {
     q: "How much am I charged, and how often?",
-    a:
-      "Every plan has the same two options: monthly billing is charged each month (Starter $12, Creator $25, Studio $49); annual billing is charged once a year (Starter $120, Creator $240, Studio $468), which works out to $10, $20 and $39 per month. These amounts are identical on the homepage, the pricing page and the checkout page.",
+    a: "Every plan has the same two options: monthly billing is charged each month (Starter $12, Creator $25, Studio $49); annual billing is charged once a year (Starter $120, Creator $240, Studio $468), which works out to $10, $20 and $39 per month. The same prices appear on the homepage, the pricing page and at checkout.",
+  },
+  {
+    q: "Can I cancel my subscription?",
+    a: "Yes. Choose monthly or annual billing and cancel anytime from your account settings at gen.buzzyai.video.",
   },
   {
     q: "Who processes my payment?",
-    a:
-      "Payments are processed exclusively by our payment processor and Merchant of Record, Waffo Pancake, through its PCI-DSS compliant checkout. Your card details are never stored on our servers.",
+    a: "Payments are processed exclusively by our payment processor and Merchant of Record, Waffo Pancake, through its PCI-DSS compliant checkout. Your card details are never stored on our servers.",
   },
   {
     q: "What is your refund policy?",

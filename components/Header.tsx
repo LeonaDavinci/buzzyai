@@ -18,7 +18,7 @@ export default function Header() {
           <a href="/skills">Skills</a>
           <a href="/blog">Blog</a>
           <a href="/pricing">Pricing</a>
-          <a href="/#faq">FAQ</a>
+          <a href="/faq">FAQ</a>
         </nav>
         <div className={styles.actions}>
           <a href="https://gen.buzzyai.video" className={styles.signin}>
