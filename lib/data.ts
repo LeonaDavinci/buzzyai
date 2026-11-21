@@ -53,6 +53,12 @@ export interface Plan {
   priceYearly: number;
   unit: string; // "/mo"
   desc: string;
+  /** Monthly quota + capability figures, shown as the stat grid on the card.
+   *  Values mirror the gen app pricing page verbatim. */
+  credits: string;
+  videos: string;
+  quality: string;
+  parallel: string;
   features: string[];
   featured?: boolean;
   cta: string;
@@ -100,13 +106,19 @@ export const plans: Plan[] = [
     priceYearly: 10,
     unit: "/mo",
     desc: "For first-time AI video creators.",
+    credits: "2,000 / mo",
+    videos: "~83 / mo",
+    quality: "720p video · 4K image",
+    parallel: "8 tasks",
     features: [
-      "120 generations / month",
-      "720p export",
+      "2,000 credits / month",
+      "~83 video generations / month",
+      "720p video · 4K image",
+      "8 parallel generations",
       "Core model access",
       "Community support",
     ],
-    cta: "Get started",
+    cta: "Choose plan",
     href: "/pricing#checkout",
     checkoutUrl: CHECKOUT.starter,
   },
@@ -116,15 +128,20 @@ export const plans: Plan[] = [
     priceYearly: 20,
     unit: "/mo",
     desc: "For serious everyday creators.",
+    credits: "3,600 / mo",
+    videos: "~150 / mo",
+    quality: "2K video · 4K image",
+    parallel: "12 tasks",
     features: [
-      "500 generations / month",
-      "4K export · 30s clips",
-      "Full model matrix",
+      "3,600 credits / month",
+      "~150 video generations / month",
+      "2K video · 4K image",
+      "12 parallel generations",
+      "All models · priority render queue",
       "Storyboard / Camera / Light",
-      "Priority render queue",
     ],
     featured: true,
-    cta: "Upgrade",
+    cta: "Choose plan",
     href: "/pricing#checkout",
     checkoutUrl: CHECKOUT.creator,
   },
@@ -134,14 +151,19 @@ export const plans: Plan[] = [
     priceYearly: 39,
     unit: "/mo",
     desc: "For studios & brand teams.",
+    credits: "6,000 / mo",
+    videos: "~250 / mo",
+    quality: "2K video · 4K image",
+    parallel: "24 tasks",
     features: [
-      "Unlimited generations",
-      "4K export · team space",
-      "API access",
-      "Dedicated manager",
+      "6,000 credits / month",
+      "~250 video generations / month",
+      "2K video · 4K image",
+      "24 parallel generations",
+      "Team space · API access",
       "Commercial license",
     ],
-    cta: "Contact us",
+    cta: "Choose plan",
     href: "/pricing#checkout",
     checkoutUrl: CHECKOUT.studio,
   },

@@ -115,6 +115,24 @@ export default function PricingBoard() {
                     </span>
                   )}
                   <p className={pricing.desc}>{p.desc}</p>
+                  <dl className={pricing.stats}>
+                    <div className={pricing.stat}>
+                      <dt className={pricing.statLabel}>Credits</dt>
+                      <dd className={pricing.statValue}>{p.credits}</dd>
+                    </div>
+                    <div className={pricing.stat}>
+                      <dt className={pricing.statLabel}>Videos</dt>
+                      <dd className={pricing.statValue}>{p.videos}</dd>
+                    </div>
+                    <div className={pricing.stat}>
+                      <dt className={pricing.statLabel}>Quality</dt>
+                      <dd className={pricing.statValue}>{p.quality}</dd>
+                    </div>
+                    <div className={pricing.stat}>
+                      <dt className={pricing.statLabel}>Parallel</dt>
+                      <dd className={pricing.statValue}>{p.parallel}</dd>
+                    </div>
+                  </dl>
                   <button
                     type="button"
                     className={`btn ${
@@ -142,9 +160,11 @@ export default function PricingBoard() {
 
           <p className={pricing.footnote}>
             All plans include the Director Canvas, storyboard, multi-angle
-            camera control and real-time relighting. Monthly plans are billed
-            every month; annual plans are billed once a year at the total shown.
-            The same prices appear on the homepage and at checkout.
+            camera control and real-time relighting. Video counts are monthly
+            estimates and vary by model, resolution and clip length — no plan
+            includes unlimited generations. Monthly plans are billed every
+            month; annual plans are billed once a year at the total shown. The
+            same prices appear on the homepage and at checkout.
           </p>
         </div>
       </section>
