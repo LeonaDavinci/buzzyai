@@ -21,10 +21,10 @@ export default function Header() {
           <a href="/#faq">FAQ</a>
         </nav>
         <div className={styles.actions}>
-          <a href="/" className={styles.signin}>
+          <a href="https://gen.buzzyai.video" className={styles.signin}>
             Sign in
           </a>
-          <a href="/director" className="btn btn-primary">
+          <a href="https://gen.buzzyai.video" className="btn btn-primary">
             Open Canvas
           </a>
         </div>
