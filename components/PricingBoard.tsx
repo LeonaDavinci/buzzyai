@@ -1,26 +1,37 @@
 "use client";
 
 import { useState } from "react";
-import { plans, CHECKOUT } from "@/lib/data";
+import {
+  plans,
+  usd,
+  monthlyEquivalent,
+  annualSaving,
+  billedNote,
+  MAX_ANNUAL_SAVING,
+  PAYMENT_NOTE,
+  REFUND_NOTE,
+} from "@/lib/data";
+import type { BillingCycle } from "@/lib/data";
 import pricing from "./Pricing.module.css";
 import styles from "./PricingBoard.module.css";
 
-type Billing = "monthly" | "yearly";
-
 export default function PricingBoard() {
-  const [billing, setBilling] = useState<Billing>("yearly");
+  // Same default cycle as the homepage and the /payment checkout page.
+  const [billing, setBilling] = useState<BillingCycle>("yearly");
   const [selected, setSelected] = useState<string>(
     plans.find((p) => p.featured)?.name ?? plans[0].name
   );
 
   const plan = plans.find((p) => p.name === selected) ?? plans[0];
-  const showYearly = billing === "yearly" && plan.priceYearly;
-  const price = showYearly ? plan.priceYearly! : plan.priceMonthly;
-  const original = billing === "monthly" ? plan.priceYearly : plan.priceMonthly;
-  // Paid plans route through the /payment landing page so we can track intent;
-  // free plan (no checkoutUrl) falls back to its signup destination.
+  const perMonth = monthlyEquivalent(plan, billing);
+  const saving = annualSaving(plan);
+
+  // Carry the selected cycle through to the checkout page so the amount shown
+  // there is exactly the amount shown here.
   const checkoutHref = plan.checkoutUrl
-    ? `/payment?plan=${plan.name.toLowerCase()}`
+    ? plan.checkoutUrl.startsWith("/")
+      ? `${plan.checkoutUrl}&billing=${billing}`
+      : plan.checkoutUrl
     : plan.href ?? "#";
 
   const scrollToCheckout = () => {
@@ -36,7 +47,7 @@ export default function PricingBoard() {
             Choose your <span className="gold">plan</span>
           </h1>
           <p className="section-sub">
-            Start free, upgrade when you are ready. Cancel anytime.
+            Choose monthly or annual billing. Cancel anytime.
           </p>
 
           {/* ShipAny-style billing toggle */}
@@ -66,39 +77,45 @@ export default function PricingBoard() {
               onClick={() => setBilling("yearly")}
             >
               Annually
-              <span className={pricing.save}>Save 20%</span>
+              <span className={pricing.save}>
+                Save up to {MAX_ANNUAL_SAVING}%
+              </span>
             </button>
           </div>
 
           <div className={pricing.grid}>
             {plans.map((p) => {
-              const pShowYearly = billing === "yearly" && p.priceYearly;
-              const pPrice = pShowYearly ? p.priceYearly! : p.priceMonthly;
-              const pOrig =
-                billing === "monthly" ? p.priceYearly : p.priceMonthly;
+              const pPerMonth = monthlyEquivalent(p, billing);
+              const pSaving = annualSaving(p);
               const cardLabel = p.checkoutUrl ? "Choose plan" : p.cta;
               return (
                 <div
                   key={p.name}
-                  className={`${pricing.card} ${p.featured ? pricing.featured : ""} ${
-                    selected === p.name ? styles.selected : ""
-                  }`}
+                  className={`${pricing.card} ${
+                    p.featured ? pricing.featured : ""
+                  } ${selected === p.name ? styles.selected : ""}`}
                 >
                   {p.featured && <span className={pricing.tag}>Most popular</span>}
                   <h3 className={pricing.name}>{p.name}</h3>
                   <div className={pricing.priceRow}>
-                    <span className={pricing.price}>{pPrice}</span>
+                    <span className={pricing.price}>{usd(pPerMonth)}</span>
                     <span className={pricing.unit}>{p.unit}</span>
                   </div>
-                  {pOrig && pOrig !== pPrice && (
+                  <span className={pricing.billedNote}>
+                    {billedNote(p, billing)}
+                  </span>
+                  {billing === "yearly" && (
                     <span className={pricing.billedNote}>
-                      <s className={pricing.strike}>{pOrig}</s> billed {billing}
+                      <s className={pricing.strike}>{usd(p.priceMonthly)}/mo</s>{" "}
+                      monthly · save {pSaving}%
                     </span>
                   )}
                   <p className={pricing.desc}>{p.desc}</p>
                   <button
                     type="button"
-                    className={`btn ${p.featured ? "btn-primary" : "btn-ghost"} ${pricing.cta}`}
+                    className={`btn ${
+                      p.featured ? "btn-primary" : "btn-ghost"
+                    } ${pricing.cta}`}
                     onClick={() => {
                       setSelected(p.name);
                       scrollToCheckout();
@@ -120,8 +137,10 @@ export default function PricingBoard() {
           </div>
 
           <p className={pricing.footnote}>
-            All plans include the Director Canvas, storyboard, multi-angle camera
-            control and real-time relighting.
+            All plans include the Director Canvas, storyboard, multi-angle
+            camera control and real-time relighting. Monthly plans are billed
+            every month; annual plans are billed once a year at the total shown.
+            The same prices appear on the homepage and at checkout.
           </p>
         </div>
       </section>
@@ -135,34 +154,34 @@ export default function PricingBoard() {
               <h2 className={styles.title}>
                 Subscribe to <span className="gold">BuzzyAI.Video</span>
               </h2>
-              <p className={styles.sub}>Pick a plan and continue to secure payment.</p>
+              <p className={styles.sub}>
+                Pick a plan and continue to secure payment.
+              </p>
             </div>
 
-            <div className={styles.picker} role="radiogroup" aria-label="Select plan">
-              {plans.map((p) => {
-                const pickPrice =
-                  billing === "yearly" && p.priceYearly
-                    ? p.priceYearly
-                    : p.priceMonthly;
-                return (
-                  <button
-                    key={p.name}
-                    type="button"
-                    role="radio"
-                    aria-checked={selected === p.name}
-                    className={`${styles.pick} ${
-                      selected === p.name ? styles.pickActive : ""
-                    }`}
-                    onClick={() => setSelected(p.name)}
-                  >
-                    <span className={styles.pickName}>{p.name}</span>
-                    <span className={styles.pickPrice}>
-                      {pickPrice}
-                      {p.unit}
-                    </span>
-                  </button>
-                );
-              })}
+            <div
+              className={styles.picker}
+              role="radiogroup"
+              aria-label="Select plan"
+            >
+              {plans.map((p) => (
+                <button
+                  key={p.name}
+                  type="button"
+                  role="radio"
+                  aria-checked={selected === p.name}
+                  className={`${styles.pick} ${
+                    selected === p.name ? styles.pickActive : ""
+                  }`}
+                  onClick={() => setSelected(p.name)}
+                >
+                  <span className={styles.pickName}>{p.name}</span>
+                  <span className={styles.pickPrice}>
+                    {usd(monthlyEquivalent(p, billing))}
+                    {p.unit}
+                  </span>
+                </button>
+              ))}
             </div>
 
             <div className={styles.summary}>
@@ -175,11 +194,19 @@ export default function PricingBoard() {
               <div className={styles.sumItem}>
                 <span className={styles.sumLabel}>Price</span>
                 <span className={styles.sumPrice}>
-                  {price}
+                  {usd(perMonth)}
                   {plan.unit}
-                  {original && original !== price && (
-                    <s className={styles.sumStrike}>{original}</s>
+                  {billing === "yearly" && (
+                    <s className={styles.sumStrike}>
+                      {usd(plan.priceMonthly)}/mo
+                    </s>
                   )}
+                </span>
+              </div>
+              <div className={styles.sumItem}>
+                <span className={styles.sumLabel}>You pay</span>
+                <span className={styles.sumValue}>
+                  {billedNote(plan, billing)}
                 </span>
               </div>
             </div>
@@ -191,8 +218,14 @@ export default function PricingBoard() {
               {plan.checkoutUrl ? "Continue to secure checkout" : plan.cta}
             </a>
             <p className={styles.secure}>
-              Secure payment via Stripe / Lemonsqueezy · 30-day money-back ·
-              Cancel anytime
+              {PAYMENT_NOTE} · {REFUND_NOTE} · Cancel anytime
+            </p>
+            <p className={styles.secure}>
+              {billing === "yearly"
+                ? `Annual billing saves ${saving}% versus paying monthly. `
+                : `Switch to annual billing to save ${saving}% per month. `}
+              Full refund terms are in our{" "}
+              <a href="/terms">Terms of Service</a>.
             </p>
           </div>
         </div>

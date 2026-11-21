@@ -65,6 +65,17 @@
   color: var(--text-3);
   font-size: 13px;
   margin-top: 26px;
+  line-height: 1.6;
+}
+
+.footnote + .footnote {
+  margin-top: 8px;
+}
+
+.footnote a {
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 2px;
 }
 
 .grid {

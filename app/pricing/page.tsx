@@ -6,7 +6,7 @@ import PricingBoard from "@/components/PricingBoard";
 export const metadata: Metadata = {
   title: "Pricing - BuzzyAI.Video | Plans & Subscription",
   description:
-    "Pick a BuzzyAI.Video plan: free Starter, Creator and Studio tiers with storyboard, multi-angle camera control and real-time relighting. Subscribe monthly or annually and cancel anytime.",
+    "Pick a BuzzyAI.Video plan: Starter, Creator and Studio tiers with storyboard, multi-angle camera control and real-time relighting. Subscribe monthly or annually, pay securely via Waffo Pancake, and cancel anytime.",
   keywords: [
     "BuzzyAI.Video pricing",
     "AI video subscription",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Pricing - BuzzyAI.Video",
     description:
-      "Subscribe to BuzzyAI.Video: free Starter, Creator and Studio plans for consistent AI video creation.",
+      "Subscribe to BuzzyAI.Video: Starter, Creator and Studio plans for consistent AI video creation, with monthly and annual billing.",
     type: "website",
     url: "https://buzzyai.video/pricing",
   },

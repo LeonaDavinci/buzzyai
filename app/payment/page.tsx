@@ -13,14 +13,15 @@ export const metadata: Metadata = {
 export default function PaymentPage({
   searchParams,
 }: {
-  searchParams: { plan?: string };
+  searchParams: { plan?: string; billing?: string };
 }) {
   const plan = searchParams.plan;
+  const billing = searchParams.billing;
   return (
     <>
       <Header />
       <main>
-        <PaymentLanding plan={plan} />
+        <PaymentLanding plan={plan} billing={billing} />
       </main>
       <Footer />
     </>

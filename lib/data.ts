@@ -42,39 +42,57 @@ export const tools: Tool[] = [
   },
 ];
 
+export type BillingCycle = "monthly" | "yearly";
+
 export interface Plan {
   name: string;
-  priceMonthly: string; // e.g. "$15"
-  priceYearly?: string; // per-month equivalent when billed annually, e.g. "$12"
+  /** USD charged every month when the subscriber chooses monthly billing. */
+  priceMonthly: number;
+  /** USD-per-month equivalent on the annual plan. The annual plan is charged
+   *  once a year as priceYearly × 12, and is always cheaper per month. */
+  priceYearly: number;
   unit: string; // "/mo"
   desc: string;
   features: string[];
   featured?: boolean;
   cta: string;
   href?: string; // CTA destination (homepage / nav jump)
-  checkoutUrl?: string; // Real payment link for the /pricing checkout board
+  checkoutUrl?: string; // Destination for the /pricing checkout board
 }
 
+/* --------------------------------------------------------------------------
+ * Single source of truth for payment and refund wording.
+ * Waffo Pancake is our payment processor AND Merchant of Record. It is the
+ * only payment channel used on this site, so the homepage, /pricing, /payment
+ * and the Terms of Service must all state the same thing.
+ * ------------------------------------------------------------------------ */
+export const PAYMENT_PROCESSOR = "Waffo Pancake";
+export const PAYMENT_NOTE =
+  "Secure payment via Waffo Pancake (Merchant of Record)";
+export const REFUND_NOTE =
+  "Full refund within 3 days if you can't generate videos";
+export const REFUND_TERMS =
+  "If you are unable to use the Service to generate videos, you may request a full refund within 3 days of your purchase.";
+
 /**
- * Real payment destinations for the /pricing checkout board.
- * Replace with your Stripe Checkout or Lemonsqueezy subscription links.
- * (Set NEXT_PUBLIC_STRIPE_CREATOR_URL at build to override the placeholder.)
+ * Checkout destinations. Until Waffo-hosted checkout URLs are configured,
+ * every paid plan goes through the internal /payment landing page, which
+ * shows exactly the same plan, cycle and amount as the homepage and /pricing.
  */
 export const CHECKOUT = {
   starter:
-    process.env.NEXT_PUBLIC_STRIPE_STARTER_URL ??
-    "https://buy.stripe.com/your-starter-subscription-link",
+    process.env.NEXT_PUBLIC_WAFFO_STARTER_URL ?? "/payment?plan=starter",
   creator:
-    process.env.NEXT_PUBLIC_STRIPE_CREATOR_URL ??
-    "https://buy.stripe.com/your-creator-subscription-link",
-  studio: "mailto:hello@buzzyai.video?subject=Studio%20plan%20inquiry",
+    process.env.NEXT_PUBLIC_WAFFO_CREATOR_URL ?? "/payment?plan=creator",
+  studio:
+    process.env.NEXT_PUBLIC_WAFFO_STUDIO_URL ?? "/payment?plan=studio",
 };
 
 export const plans: Plan[] = [
   {
     name: "Starter",
-    priceMonthly: "$12",
-    priceYearly: "$10",
+    priceMonthly: 12,
+    priceYearly: 10,
     unit: "/mo",
     desc: "For first-time AI video creators.",
     features: [
@@ -89,8 +107,8 @@ export const plans: Plan[] = [
   },
   {
     name: "Creator",
-    priceMonthly: "$25",
-    priceYearly: "$20",
+    priceMonthly: 25,
+    priceYearly: 20,
     unit: "/mo",
     desc: "For serious everyday creators.",
     features: [
@@ -102,13 +120,13 @@ export const plans: Plan[] = [
     ],
     featured: true,
     cta: "Upgrade",
-    href: "/pricing#checkout", // homepage / nav jump → standalone pricing board
-    checkoutUrl: CHECKOUT.creator, // real payment link (Stripe / Lemonsqueezy)
+    href: "/pricing#checkout",
+    checkoutUrl: CHECKOUT.creator,
   },
   {
     name: "Studio",
-    priceMonthly: "$49",
-    priceYearly: "$39",
+    priceMonthly: 49,
+    priceYearly: 39,
     unit: "/mo",
     desc: "For studios & brand teams.",
     features: [
@@ -119,10 +137,40 @@ export const plans: Plan[] = [
       "Commercial license",
     ],
     cta: "Contact us",
-    href: "/pricing#checkout", // homepage / nav jump → standalone pricing board
-    checkoutUrl: CHECKOUT.studio, // real payment link (mailto inquiry)
+    href: "/pricing#checkout",
+    checkoutUrl: CHECKOUT.studio,
   },
 ];
+
+/** Format a USD amount without unnecessary trailing zeros. */
+export function usd(amount: number): string {
+  return Number.isInteger(amount) ? `$${amount}` : `$${amount.toFixed(2)}`;
+}
+
+/** Per-month price displayed for a plan under a given billing cycle. */
+export function monthlyEquivalent(p: Plan, cycle: BillingCycle): number {
+  return cycle === "yearly" ? p.priceYearly : p.priceMonthly;
+}
+
+/** The amount actually charged in one payment for a billing cycle. */
+export function chargePerCycle(p: Plan, cycle: BillingCycle): number {
+  return cycle === "yearly" ? p.priceYearly * 12 : p.priceMonthly;
+}
+
+/** Percentage saved per month by choosing annual billing. */
+export function annualSaving(p: Plan): number {
+  return Math.round((1 - p.priceYearly / p.priceMonthly) * 100);
+}
+
+/** Largest annual discount across all plans, used on the billing toggle. */
+export const MAX_ANNUAL_SAVING = Math.max(...plans.map(annualSaving));
+
+/** Explains exactly what is charged and how often, for any plan/cycle. */
+export function billedNote(p: Plan, cycle: BillingCycle): string {
+  return cycle === "yearly"
+    ? `Billed ${usd(chargePerCycle(p, "yearly"))} once a year`
+    : `Billed ${usd(chargePerCycle(p, "monthly"))} every month`;
+}
 
 export interface Faq {
   q: string;
@@ -149,6 +197,20 @@ export const faqs: Faq[] = [
   {
     q: "How do you keep characters consistent across shots?",
     a: "The Storyboard Creator records characters, objects, and locations, and automatically maintains consistency when generating across scenes.",
+  },
+  {
+    q: "How much am I charged, and how often?",
+    a:
+      "Every plan has the same two options: monthly billing is charged each month (Starter $12, Creator $25, Studio $49); annual billing is charged once a year (Starter $120, Creator $240, Studio $468), which works out to $10, $20 and $39 per month. These amounts are identical on the homepage, the pricing page and the checkout page.",
+  },
+  {
+    q: "Who processes my payment?",
+    a:
+      "Payments are processed exclusively by our payment processor and Merchant of Record, Waffo Pancake, through its PCI-DSS compliant checkout. Your card details are never stored on our servers.",
+  },
+  {
+    q: "What is your refund policy?",
+    a: `${REFUND_TERMS} Contact hello@buzzyai.video within 3 days of your purchase with your account email and transaction ID. See Section 7 of our Terms of Service for full details.`,
   },
 ];
 
