@@ -160,7 +160,7 @@ export const plans: Plan[] = [
       "~250 video generations / month",
       "2K video · 4K image",
       "24 parallel generations",
-      "Team space · API access",
+      "Team space",
       "Commercial license",
     ],
     cta: "Choose plan",
