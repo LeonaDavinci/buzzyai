@@ -30,7 +30,7 @@ export default function DirectorCanvas() {
                 </li>
               ))}
             </ul>
-            <a href="https://gen.buzzyai.video" className="btn btn-primary">
+            <a href="/director" className="btn btn-primary">
               Open the Director Canvas
             </a>
           </div>

@@ -8,7 +8,7 @@ const cols: FooterCol[] = [
     title: "Product",
     links: [
       { label: "Models", href: "/#models" },
-      { label: "Director Canvas", href: "https://gen.buzzyai.video" },
+      { label: "Director Canvas", href: "/director" },
       { label: "Creative Tools", href: "/#tools" },
       { label: "Pricing", href: "/pricing" },
       { label: "Changelog", href: "/" },
