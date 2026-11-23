@@ -81,7 +81,7 @@ const doc: LegalDoc = {
                 "Content that promotes or facilitates terrorism, extremism, or mass violence.",
                 "Technical instructions for weapons of mass destruction.",
                 "Content inciting genocide or ethnic hatred.",
-                "Deepfakes of real individuals, including face swaps, nudification, intimate-scene compositing, and fabricated statements or actions, whether or not the individuals consent.",
+                "Deepfakes of real individuals, including face swaps, character swap or likeness replacement in existing video footage, nudification, intimate-scene compositing, and fabricated statements or actions, whether or not the individuals consent.",
               ],
             },
           ],
@@ -123,7 +123,7 @@ const doc: LegalDoc = {
           blocks: [
             {
               type: "p",
-              text: "You may only upload your own photos or voice, or material for which you have explicit permission from the people depicted. Uploading another person's photos or voice without their consent is prohibited. Before uploading, you must confirm that the material is your own or that you have permission. Permission does not authorize generating the deepfake content prohibited under Section 2.1. The Platform does not offer face-swap, nudify, or intimate-scene synthesis features.",
+              text: "You may only upload your own photos, voice, or video clips, or material for which you have explicit permission from the people depicted. Uploading another person's photos, voice, or video without their consent is prohibited. Before uploading, you must confirm that the material is your own or that you have permission. Permission does not authorize generating the deepfake content prohibited under Section 2.1. The Platform does not offer face-swap, character swap, character or likeness replacement in uploaded video, nudify, or intimate-scene synthesis features.",
             },
           ],
         },

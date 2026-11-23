@@ -376,7 +376,7 @@ const doc: LegalDoc = {
                 ["Violence / gore", "Graphic violence, gore, or content promoting harm to others."],
                 ["Hate speech", "Content attacking or demeaning people based on protected characteristics."],
                 ["Child-unsafe content (CSAM)", "Any sexualization of minors or content violating child protection laws."],
-                ["Deepfakes / impersonation", "AI-synthesized audio, video, or images that impersonate real individuals or deceive viewers about their origin or authenticity — including face swap, nudify, two-person intimate-scene synthesis, and fabricated statements or actions."],
+                ["Deepfakes / impersonation", "AI-synthesized audio, video, or images that impersonate real individuals or deceive viewers about their origin or authenticity — including face swap, character swap or likeness replacement in existing video footage, nudify, two-person intimate-scene synthesis, and fabricated statements or actions."],
                 ["Copyright / trademark infringement", "Content that infringes the intellectual property or privacy rights of any third party."],
               ],
             },
@@ -407,7 +407,7 @@ const doc: LegalDoc = {
           blocks: [
             {
               type: "p",
-              text: "If the Service allows you to upload photos or voice recordings of real people, you represent that the material is your own or that you have obtained permission from the people depicted. You may not upload another person's photo or voice without their consent. The Service does not offer face-swap, nudify, or intimate-scene synthesis features.",
+              text: "If the Service allows you to upload photos, voice recordings, or video clips of real people, you represent that the material is your own or that you have obtained permission from the people depicted. You may not upload another person's photo, voice, or video without their consent. The Service does not offer face-swap, character swap, character or likeness replacement in uploaded video, nudify, or intimate-scene synthesis features.",
             },
           ],
         },

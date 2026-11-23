@@ -238,6 +238,10 @@ export const faqs: Faq[] = [
     a: "Yes. Choose monthly or annual billing and cancel anytime from your account settings at gen.buzzyai.video.",
   },
   {
+    q: "Do you offer face swap or character replacement?",
+    a: "No. BuzzyAI.Video does not offer face swap, character swap, likeness replacement in uploaded video, nudify, or intimate-scene synthesis features. Uploading photos, voice, or video of real people without their consent is prohibited, and prompts for these outputs are blocked. See our Acceptable Use Policy for details.",
+  },
+  {
     q: "Who processes my payment?",
     a: "Payments are processed exclusively by our payment processor and Merchant of Record, Waffo Pancake, through its PCI-DSS compliant checkout. Your card details are never stored on our servers.",
   },

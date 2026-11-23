@@ -138,21 +138,24 @@ moving image.
 
 **Frequently asked questions**
 
-- **Which AI video models are supported?** — We aggregate 11+ leading video and
-  image models including Seedance, Kling, Runway, Veo, Google Omni, Hailuo, Wan,
-  and Pixverse. Switch between them freely from one interface.
+- **What is BuzzyAI.Video?** — An AI viral video maker for text-to-video, image-to-video, music videos, 2-person rap videos and product ads. This site is the showcase and pricing hub; creating happens at gen.buzzyai.video.
 
-- **Can I use it without any filmmaking background?** — Yes. BuzzyAI.Video acts
-  as your AI director. With storyboard generation, visual camera control, and
-  real-time lighting, anyone can produce cinematic shorts.
+- **How do I start creating videos?** — Sign in at gen.buzzyai.video with email and password, or one-click Google sign-in.
 
-- **Do you support text-to-video and image-to-video?** — Both. Type a prompt to
-  generate video, or upload a reference image for image-to-video creation.
+- **Can I use it without any filmmaking background?** — Yes. Every plan includes the Director Canvas with storyboard generation, multi-angle camera control and real-time relighting.
 
-- **What is the maximum output quality and length?** — Flagship models support
-  up to 4K quality, 30-second clips per generation, and project management for
-  up to 50 assets.
+- **Which AI models are supported?** — Starter includes core model access; Creator and Studio unlock all available models with a priority render queue on Creator and above.
 
-- **How do you keep characters consistent across shots?** — The Storyboard
-  Creator records characters, objects, and locations, and automatically
-  maintains consistency when generating across scenes.
+- **What video quality and output volume do I get?** — Starter: 720p video and 4K images, about 83 videos a month. Creator and Studio: 2K video and 4K images, about 150 and 250 videos a month respectively. Counts are estimates; no plan includes unlimited generations.
+
+- **How do credits work?** — 2,000 credits on Starter, 3,600 on Creator, 6,000 on Studio. Generation cost varies by model, resolution and clip length; the allowance resets each billing cycle.
+
+- **How much am I charged, and how often?** — Monthly: Starter $12, Creator $25, Studio $49. Annual: $120, $240, $468 once a year (= $10, $20, $39 per month). Same prices on the homepage, the pricing page and at checkout.
+
+- **Can I cancel my subscription?** — Yes, cancel anytime from your account settings at gen.buzzyai.video.
+
+- **Do you offer face swap or character replacement?** — No. BuzzyAI.Video does not offer face swap, character swap, likeness replacement in uploaded video, nudify, or intimate-scene synthesis features. Uploading photos, voice, or video of real people without their consent is prohibited, and prompts for these outputs are blocked. See our Acceptable Use Policy.
+
+- **Who processes my payment?** — Waffo Pancake, our Merchant of Record, through its PCI-DSS compliant checkout. Card details are never stored on our servers.
+
+- **What is your refund policy?** — If you are unable to use the Service to generate videos, you may request a full refund within 3 days of purchase. Contact hello@buzzyai.video with your account email and transaction ID. See Section 7 of our Terms of Service.
