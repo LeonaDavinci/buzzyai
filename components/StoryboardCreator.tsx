@@ -114,7 +114,7 @@ export default function StoryboardCreator() {
               </li>
               <li>
                 <span className={styles.check}>✓</span>
-                Render with 11+ models while keeping the same visual DNA
+                Render with 30+ models while keeping the same visual DNA
               </li>
             </ul>
             <a href="https://gen.buzzyai.video" className="btn btn-primary">

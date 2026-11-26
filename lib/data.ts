@@ -5,17 +5,42 @@ export interface ModelItem {
 }
 
 export const models: ModelItem[] = [
-  { name: "2.5 Model", desc: "4K · 30s clips · 50 assets", featured: true },
-  { name: "Seedance 2.5", desc: "Motion-driven video creation" },
-  { name: "Google Omni", desc: "Cinematic video generation" },
-  { name: "Kling", desc: "High-fidelity physics simulation" },
+  // Flagship video models
+  { name: "Seedance 2.0", desc: "Flagship cinematic video", featured: true },
+  { name: "Veo 3.1 Quality", desc: "Google's flagship video model", featured: true },
+  { name: "Kling 2.5", desc: "High-fidelity physics & motion", featured: true },
+  { name: "Wan 2.7", desc: "Open-source state of the art", featured: true },
+  // More video models
+  { name: "Seedance 2.0 Mini", desc: "Fast motion-driven video" },
+  { name: "Veo 3.1 Fast", desc: "Quick Google video generation" },
+  { name: "Kling 2.1 Master", desc: "Master-level detail & control" },
+  { name: "Kling 4.0", desc: "Next-generation Kling video" },
+  { name: "Wan 2.6", desc: "Open-source video generation" },
+  { name: "Wan 3.0", desc: "Latest open-source video model" },
+  { name: "HappyHorse 1.0", desc: "Expressive short clips" },
+  { name: "HappyHorse 1.1", desc: "Faster expressive clips" },
+  { name: "Grok Imagine Video", desc: "xAI imaginative video" },
+  { name: "Grok Imagine 1.5", desc: "Upgraded Grok video" },
+  { name: "MAGI-2", desc: "Sand AI creative video" },
+  { name: "Gemini Omni 1.2", desc: "Fast multimodal video" },
+  { name: "Pixverse V6 Max", desc: "Stylized & dynamic video" },
   { name: "Runway", desc: "Next-gen creative video tools" },
-  { name: "Nano Banana 2", desc: "Lightweight video synthesis" },
-  { name: "Veo 3.1", desc: "Google's advanced video generation" },
-  { name: "GPT Image 2", desc: "Photorealistic image generation" },
   { name: "Hailuo", desc: "Fast & expressive drafting" },
-  { name: "Wan", desc: "Open-source SOTA video model" },
-  { name: "Pixverse", desc: "Stylized & dynamic video" },
+  { name: "World Labs Atlas", desc: "Generative 3D worlds" },
+  // Image models
+  { name: "GPT Image 2", desc: "Photorealistic image generation" },
+  { name: "GPT Images 2.5 Flare", desc: "OpenAI image generation" },
+  { name: "GPT Images 2.5 Sunburst", desc: "OpenAI image generation" },
+  { name: "Nano Banana Pro", desc: "Google image generation" },
+  { name: "Nano Banana 2", desc: "Fast Google image editing" },
+  { name: "Nano Banana 2 Lite", desc: "Lightweight image editing" },
+  { name: "Seedream 5.0 Pro", desc: "High-detail image creation" },
+  { name: "Seedream 5.0 Lite", desc: "Fast image creation" },
+  { name: "Flux Kontext Max", desc: "Black Forest Labs image editing" },
+  { name: "Flux Kontext Pro", desc: "Consistent image editing" },
+  { name: "Flux 3 Max", desc: "Next-gen Flux image model" },
+  { name: "Qwen Image Edit", desc: "Alibaba image editing" },
+  { name: "Z-Image Turbo", desc: "Fast lightweight image model" },
 ];
 
 export interface Tool {
@@ -219,7 +244,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "Which AI models are supported?",
-    a: "Starter includes core model access; Creator and Studio unlock all available models with a priority render queue on Creator and above. The model lineup is refreshed regularly inside your workspace.",
+    a: "We bring 30+ leading video and image models into one canvas — Seedance 2.0, Veo 3.1, Kling 2.5, Wan 2.7, Runway, Grok Imagine, MAGI-2, HappyHorse, Pixverse, Hailuo, Gemini Omni, GPT Image, Nano Banana, Seedream, Flux Kontext, Qwen and more. Starter includes core model access; Creator and Studio unlock all available models with a priority render queue on Creator and above.",
   },
   {
     q: "What video quality and output volume do I get?",
