@@ -10,6 +10,7 @@ export const models: ModelItem[] = [
   { name: "Veo 3.1 Quality", desc: "Google's flagship video model", featured: true },
   { name: "Kling 2.5", desc: "High-fidelity physics & motion", featured: true },
   { name: "Wan 2.7", desc: "Open-source state of the art", featured: true },
+  { name: "MiniMax H3", desc: "Native stereo audio · 2K video", featured: true },
   // More video models
   { name: "Seedance 2.0 Mini", desc: "Fast motion-driven video" },
   { name: "Veo 3.1 Fast", desc: "Quick Google video generation" },
@@ -244,7 +245,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "Which AI models are supported?",
-    a: "We bring 30+ leading video and image models into one canvas — Seedance 2.0, Veo 3.1, Kling 2.5, Wan 2.7, Runway, Grok Imagine, MAGI-2, HappyHorse, Pixverse, Hailuo, Gemini Omni, GPT Image, Nano Banana, Seedream, Flux Kontext, Qwen and more. Starter includes core model access; Creator and Studio unlock all available models with a priority render queue on Creator and above.",
+    a: "We bring 30+ leading video and image models into one canvas — Seedance 2.0, Veo 3.1, Kling 2.5, Wan 2.7, MiniMax H3, Runway, Grok Imagine, MAGI-2, HappyHorse, Pixverse, Hailuo, Gemini Omni, GPT Image, Nano Banana, Seedream, Flux Kontext, Qwen and more. Starter includes core model access; Creator and Studio unlock all available models with a priority render queue on Creator and above.",
   },
   {
     q: "What video quality and output volume do I get?",
