@@ -243,13 +243,13 @@ const doc: LegalDoc = {
         {
           type: "bullets",
           items: [
-            "Dedicated safety & report email: hello@buzzyai.video (monitored; please include the content link or request ID, and a short description).",
-            "General support: hello@buzzyai.video.",
+            "Dedicated safety & report email: buzzyai.llc@gmail.com (monitored; please include the content link or request ID, and a short description).",
+            "General support: buzzyai.llc@gmail.com.",
           ],
         },
         {
           type: "callout",
-          text: "For critical violations involving child safety or terrorism, email hello@buzzyai.video with \"URGENT SAFETY REPORT\" in the subject line. These reports are prioritized ahead of all other queues.",
+          text: "For critical violations involving child safety or terrorism, email buzzyai.llc@gmail.com with \"URGENT SAFETY REPORT\" in the subject line. These reports are prioritized ahead of all other queues.",
         },
       ],
     },
@@ -303,7 +303,7 @@ const doc: LegalDoc = {
         {
           type: "bullets",
           items: [
-            "Appeal channel: hello@buzzyai.video (include your account email and the decision reference).",
+            "Appeal channel: buzzyai.llc@gmail.com (include your account email and the decision reference).",
             "Timeline: reviewed within 10 business days.",
             "Review method: reviewed by a reviewer independent of the original decision.",
           ],
@@ -329,8 +329,8 @@ const doc: LegalDoc = {
         {
           type: "bullets",
           items: [
-            "Safety & Reports: hello@buzzyai.video",
-            "Appeals: hello@buzzyai.video",
+            "Safety & Reports: buzzyai.llc@gmail.com",
+            "Appeals: buzzyai.llc@gmail.com",
             "Company Name: BuzzyAI.Video (operated as an individual / sole trader)",
             "Address: Not applicable — contact us via email for our current contact details.",
           ],

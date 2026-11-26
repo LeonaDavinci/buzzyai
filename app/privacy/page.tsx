@@ -39,7 +39,7 @@ const doc: LegalDoc = {
           rows: [
             ["Operator", "BuzzyAI.Video (individual / sole trader)"],
             ["Registered Address", "Not applicable — operated as an individual / sole trader; correspondence by email"],
-            ["Privacy Email", "hello@buzzyai.video"],
+            ["Privacy Email", "buzzyai.llc@gmail.com"],
             ["Data Protection Officer (DPO)", "Not applicable"],
           ],
         },
@@ -183,7 +183,7 @@ const doc: LegalDoc = {
       blocks: [
         {
           type: "p",
-          text: "To exercise any right below, contact us at hello@buzzyai.video; we respond within 30 calendar days.",
+          text: "To exercise any right below, contact us at buzzyai.llc@gmail.com; we respond within 30 calendar days.",
         },
         {
           type: "table",
@@ -210,7 +210,7 @@ const doc: LegalDoc = {
       blocks: [
         {
           type: "p",
-          text: "With your consent, we may send marketing communications about product updates via email. You can opt out at any time by clicking \"Unsubscribe\" in any email, or by contacting us at hello@buzzyai.video. Opting out does not affect essential service notifications (for example, billing and security alerts).",
+          text: "With your consent, we may send marketing communications about product updates via email. You can opt out at any time by clicking \"Unsubscribe\" in any email, or by contacting us at buzzyai.llc@gmail.com. Opting out does not affect essential service notifications (for example, billing and security alerts).",
         },
       ],
     },
@@ -235,7 +235,7 @@ const doc: LegalDoc = {
       blocks: [
         {
           type: "p",
-          text: "The Service is intended for users aged 18 and above. We do not knowingly collect information from children below that age. If you believe a child has provided us with information, contact us immediately at hello@buzzyai.video and we will promptly delete it.",
+          text: "The Service is intended for users aged 18 and above. We do not knowingly collect information from children below that age. If you believe a child has provided us with information, contact us immediately at buzzyai.llc@gmail.com and we will promptly delete it.",
         },
       ],
     },
@@ -264,8 +264,8 @@ const doc: LegalDoc = {
           type: "table",
           headers: ["Field", "Detail"],
           rows: [
-            ["Privacy Email", "hello@buzzyai.video"],
-            ["Support Email", "hello@buzzyai.video"],
+            ["Privacy Email", "buzzyai.llc@gmail.com"],
+            ["Support Email", "buzzyai.llc@gmail.com"],
             ["Operator", "BuzzyAI.Video"],
             ["Mailing Address", "Not applicable — correspondence by email"],
             ["Business Hours", "Mon–Fri, 09:00–18:00 UTC+8"],

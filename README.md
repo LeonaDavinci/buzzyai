@@ -158,4 +158,4 @@ moving image.
 
 - **Who processes my payment?** — Waffo Pancake, our Merchant of Record, through its PCI-DSS compliant checkout. Card details are never stored on our servers.
 
-- **What is your refund policy?** — If you are unable to use the Service to generate videos, you may request a full refund within 3 days of purchase. Contact hello@buzzyai.video with your account email and transaction ID. See Section 7 of our Terms of Service.
+- **What is your refund policy?** — If you are unable to use the Service to generate videos, you may request a full refund within 3 days of purchase. Contact buzzyai.llc@gmail.com with your account email and transaction ID. See Section 7 of our Terms of Service.

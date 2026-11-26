@@ -30,7 +30,7 @@ const cols: FooterCol[] = [
     links: [
       { label: "About", href: "/" },
       { label: "Careers", href: "/" },
-      { label: "Contact", href: "mailto:hello@buzzyai.video" },
+      { label: "Contact", href: "mailto:buzzyai.llc@gmail.com" },
       { label: "Privacy", href: "/privacy" },
       { label: "Terms", href: "/terms" },
       { label: "Acceptable Use", href: "/aup" },

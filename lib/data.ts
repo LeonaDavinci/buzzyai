@@ -247,7 +247,7 @@ export const faqs: Faq[] = [
   },
   {
     q: "What is your refund policy?",
-    a: `${REFUND_TERMS} Contact hello@buzzyai.video within 3 days of your purchase with your account email and transaction ID. See Section 7 of our Terms of Service for full details.`,
+    a: `${REFUND_TERMS} Contact buzzyai.llc@gmail.com within 3 days of your purchase with your account email and transaction ID. See Section 7 of our Terms of Service for full details.`,
   },
 ];
 

@@ -119,7 +119,7 @@ export default function Legal({ doc }: { doc: LegalDoc }) {
 
             <div className={styles.contact}>
               Questions about this document?{" "}
-              <a href="mailto:hello@buzzyai.video">hello@buzzyai.video</a>
+              <a href="mailto:buzzyai.llc@gmail.com">buzzyai.llc@gmail.com</a>
             </div>
             <div className={styles.back}>
               <Link href="/">← Back to BuzzyAI.Video</Link>

@@ -98,7 +98,7 @@ const doc: LegalDoc = {
             {
               type: "bullets",
               items: [
-                "Notify us immediately of any unauthorized use at hello@buzzyai.video.",
+                "Notify us immediately of any unauthorized use at buzzyai.llc@gmail.com.",
                 "Do not share your credentials with any third party.",
                 "Keep your billing email address up to date.",
               ],
@@ -205,7 +205,7 @@ const doc: LegalDoc = {
               type: "bullets",
               items: [
                 "Online (recommended): Account Settings → Subscription → Cancel Subscription; or",
-                "Email: send a cancellation request from your registered email to hello@buzzyai.video.",
+                "Email: send a cancellation request from your registered email to buzzyai.llc@gmail.com.",
               ],
             },
             {
@@ -268,7 +268,7 @@ const doc: LegalDoc = {
           blocks: [
             {
               type: "p",
-              text: "To request a refund, contact us at hello@buzzyai.video within 3 days of your purchase with your account email, transaction ID, purchase date, and a short description of why you were unable to generate videos. We acknowledge requests within 2 business days and process eligible refunds within 5–10 business days.",
+              text: "To request a refund, contact us at buzzyai.llc@gmail.com within 3 days of your purchase with your account email, transaction ID, purchase date, and a short description of why you were unable to generate videos. We acknowledge requests within 2 business days and process eligible refunds within 5–10 business days.",
             },
           ],
         },
@@ -294,7 +294,7 @@ const doc: LegalDoc = {
       blocks: [
         {
           type: "p",
-          text: "If you believe there is an error in a charge, please contact us at hello@buzzyai.video before disputing with your bank. We commit to responding within 2 business days and resolving confirmed billing errors within 5 business days.",
+          text: "If you believe there is an error in a charge, please contact us at buzzyai.llc@gmail.com before disputing with your bank. We commit to responding within 2 business days and resolving confirmed billing errors within 5 business days.",
         },
       ],
     },
@@ -417,7 +417,7 @@ const doc: LegalDoc = {
           blocks: [
             {
               type: "p",
-              text: "We screen user prompts through automated content-safety filtering (Waffo Prompt Sift plus an actively updated blocklist) before generation and apply a moderation step to generated outputs. If you encounter content that violates this policy, report it to hello@buzzyai.video. We review reports and may take enforcement actions including content removal, credit forfeiture, account suspension, or permanent bans. Users may appeal an enforcement decision by writing to the same address. The full process is described in our standalone Acceptable Use Policy at https://www.buzzyai.video/aup.",
+              text: "We screen user prompts through automated content-safety filtering (Waffo Prompt Sift plus an actively updated blocklist) before generation and apply a moderation step to generated outputs. If you encounter content that violates this policy, report it to buzzyai.llc@gmail.com. We review reports and may take enforcement actions including content removal, credit forfeiture, account suspension, or permanent bans. Users may appeal an enforcement decision by writing to the same address. The full process is described in our standalone Acceptable Use Policy at https://www.buzzyai.video/aup.",
             },
           ],
         },
@@ -472,7 +472,7 @@ const doc: LegalDoc = {
       blocks: [
         {
           type: "p",
-          text: "These Terms remain effective while you use the Service. We may suspend or terminate your account if you materially breach these Terms, we suspect fraudulent activity, or as required by law. If we terminate for reasons other than your breach, we will provide a pro-rated refund for any unused prepaid period. You may delete your account at any time by contacting hello@buzzyai.video.",
+          text: "These Terms remain effective while you use the Service. We may suspend or terminate your account if you materially breach these Terms, we suspect fraudulent activity, or as required by law. If we terminate for reasons other than your breach, we will provide a pro-rated refund for any unused prepaid period. You may delete your account at any time by contacting buzzyai.llc@gmail.com.",
         },
       ],
     },
@@ -481,7 +481,7 @@ const doc: LegalDoc = {
       blocks: [
         {
           type: "p",
-          text: "These Terms are governed by applicable law, without limiting any mandatory consumer protections you have in your country of residence. Before initiating any formal proceedings, please contact us at hello@buzzyai.video to attempt informal resolution.",
+          text: "These Terms are governed by applicable law, without limiting any mandatory consumer protections you have in your country of residence. Before initiating any formal proceedings, please contact us at buzzyai.llc@gmail.com to attempt informal resolution.",
         },
       ],
     },
@@ -505,12 +505,12 @@ const doc: LegalDoc = {
           type: "table",
           headers: ["Purpose", "Channel"],
           rows: [
-            ["General Support", "hello@buzzyai.video"],
-            ["Billing", "hello@buzzyai.video"],
-            ["Refunds", "hello@buzzyai.video"],
-            ["Cancel Subscription", "Account Settings, or hello@buzzyai.video"],
-            ["Legal & Privacy", "hello@buzzyai.video"],
-            ["Security", "hello@buzzyai.video"],
+            ["General Support", "buzzyai.llc@gmail.com"],
+            ["Billing", "buzzyai.llc@gmail.com"],
+            ["Refunds", "buzzyai.llc@gmail.com"],
+            ["Cancel Subscription", "Account Settings, or buzzyai.llc@gmail.com"],
+            ["Legal & Privacy", "buzzyai.llc@gmail.com"],
+            ["Security", "buzzyai.llc@gmail.com"],
             ["Website", "https://www.buzzyai.video"],
           ],
         },
