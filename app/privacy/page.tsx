@@ -21,10 +21,10 @@ const doc: LegalDoc = {
   eyebrow: "Legal",
   title: "Privacy Policy",
   legalName: "BuzzyAI.Video",
-  version: "Version 1.0",
-  updated: "November 16, 2026",
+  version: "Version 1.1",
+  updated: "November 25, 2026",
   intro:
-    "BuzzyAI.Video (\"we,\" \"us,\" or \"our\") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, store, and share your personal information when you use the BuzzyAI.Video service at https://www.buzzyai.video (the \"Service\"), and the rights available to you.",
+    "BuzzyAI.Video (\"we,\" \"us,\" or \"our\") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, store, and share your personal information when you use the BuzzyAI.Video service at https://www.buzzyai.video and the BuzzyAI.Video application at https://gen.buzzyai.video (together, the \"Service\"), and the rights available to you.",
   sections: [
     {
       heading: "Data Controller",
@@ -65,7 +65,22 @@ const doc: LegalDoc = {
         },
         {
           type: "sub",
-          heading: "2.2 Information We Collect Automatically",
+          heading: "2.3 Google Sign-In Data",
+          blocks: [
+            {
+              type: "bullets",
+              items: [
+                "When you choose \"Sign in with Google\", we request only the basic profile scopes and receive your Google account name, email address, and profile picture. We use them solely to create and identify your account.",
+                "We do NOT request or access your Gmail messages, Google Drive files, contacts, calendar, photos, or any other Google service data.",
+                "We do not sell or share your Google account data with advertisers, data brokers, or any third party for their own purposes.",
+                "You can revoke our access at any time from your Google Account permissions page (myaccount.google.com/permissions) or by deleting your account (Section 8).",
+              ],
+            },
+          ],
+        },
+        {
+          type: "sub",
+          heading: "2.4 Information We Collect Automatically",
           blocks: [
             {
               type: "bullets",
@@ -76,6 +91,32 @@ const doc: LegalDoc = {
               ],
             },
           ],
+        },
+      ],
+    },
+    {
+      heading: "Google User Data — Limited Use Commitment",
+      blocks: [
+        {
+          type: "p",
+          text: "BuzzyAI.Video's use and transfer to any other app of information received from Google APIs will adhere to the Google API Services User Data Policy, including the Limited Use requirements (https://developers.google.com/terms/api-services-user-data-policy).",
+        },
+        {
+          type: "p",
+          text: "In practice this means: we use the Google account data described in Section 2.3 only to authenticate you and display your account; we do not transfer it to advertisers or data brokers; we do not allow humans to read it except with your consent, to resolve a security incident, or as required by law; and you may revoke our access or request deletion at any time.",
+        },
+      ],
+    },
+    {
+      heading: "AI NCII — Prohibited Use",
+      blocks: [
+        {
+          type: "p",
+          text: "BuzzyAI.Video does not generate, host, or distribute AI-generated non-consensual intimate imagery (AI NCII), nudified content, or any non-consensual synthetic depiction of real people.",
+        },
+        {
+          type: "p",
+          text: "We do not use Google APIs, or any user data obtained through Google APIs, to create AI NCII or to develop any related models or tools. This prohibition is also part of our Terms of Use and Acceptable Use Policy: face-swap, likeness-replacement and intimate-scene synthesis features are not offered, and prompts requesting such content are blocked by automated content-safety screening.",
         },
       ],
     },
