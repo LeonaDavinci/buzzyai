@@ -11,6 +11,11 @@ export const models: ModelItem[] = [
   { name: "Kling 2.5", desc: "High-fidelity physics & motion", featured: true },
   { name: "Wan 2.7", desc: "Open-source state of the art", featured: true },
   { name: "MiniMax H3", desc: "Native stereo audio · 2K video", featured: true },
+  {
+    name: "MAGI-2",
+    desc: "AA #1 image-to-video · 30s 1080p with audio · ~10x cheaper than Seedance 2.5",
+    featured: true,
+  },
   // More video models
   { name: "Seedance 2.0 Mini", desc: "Fast motion-driven video" },
   { name: "Veo 3.1 Fast", desc: "Quick Google video generation" },
@@ -22,7 +27,6 @@ export const models: ModelItem[] = [
   { name: "HappyHorse 1.1", desc: "Faster expressive clips" },
   { name: "Grok Imagine Video", desc: "xAI imaginative video" },
   { name: "Grok Imagine 1.5", desc: "Upgraded Grok video" },
-  { name: "MAGI-2", desc: "Sand AI creative video" },
   { name: "Gemini Omni 1.2", desc: "Fast multimodal video" },
   { name: "Pixverse V6 Max", desc: "Stylized & dynamic video" },
   { name: "Runway", desc: "Next-gen creative video tools" },
@@ -246,6 +250,10 @@ export const faqs: Faq[] = [
   {
     q: "Which AI models are supported?",
     a: "We bring 30+ leading video and image models into one canvas — Seedance 2.0, Veo 3.1, Kling 2.5, Wan 2.7, MiniMax H3, Runway, Grok Imagine, MAGI-2, HappyHorse, Pixverse, Hailuo, Gemini Omni, GPT Image, Nano Banana, Seedream, Flux Kontext, Qwen and more. Starter includes core model access; Creator and Studio unlock all available models with a priority render queue on Creator and above.",
+  },
+  {
+    q: "What is MAGI-2 and why is it getting attention?",
+    a: "MAGI-2 is Sand.ai's 480B-parameter video model, ranked #1 on the Artificial Analysis image-to-video leaderboard at launch. It generates native 4–30 second 1080p clips with synchronized audio in a single pass, accepts up to 20 mixed reference assets (images, video and audio), and supports prompts up to 20,000 characters for precise shot timing. Its published 1080p rate is about CNY 0.5 per second — roughly one tenth of Seedance 2.5 — so you can iterate far more clips for the same budget. Exact model availability depends on your plan.",
   },
   {
     q: "What video quality and output volume do I get?",
