@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 import styles from "./tr.module.css";
 
 export const metadata: Metadata = {
-  title: "Buzzy Yapay Zeka Video Oluşturucu | Viral Videoları Saniyeler İçinde Yap",
+  title: "Buzzy AI Yapay Zeka Video Oluşturucu | Viral Videoları Saniyeler İçinde Yap",
   description:
-    "Buzzy yapay zeka video oluşturucu: metin veya görselden, 30'dan fazla modelle (MAGI-2, Seedance 2.0, Veo 3.1, Kling) saniyeler içinde viral video yap. Senaryo, kamera ve ışık tek tuvalde. gen.buzzyai.video adresinden başla.",
+    "Buzzy AI yapay zeka video oluşturucu: metin veya görselden, 30'dan fazla modelle (MAGI-2, Seedance 2.0, Veo 3.1, Kling) saniyeler içinde viral video yap. Senaryo, kamera ve ışık tek tuvalde. gen.buzzyai.video adresinden başla.",
   keywords: [
-    "yapay zeka video oluşturucu",
+    "buzzy ai yapay zeka video oluşturucu",
+    "buzzy ai",
     "AI video oluşturucu",
     "yapay zeka ile video yapma",
     "metinden videoya",
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Buzzy Yapay Zeka Video Oluşturucu",
+    title: "Buzzy AI Yapay Zeka Video Oluşturucu",
     description:
       "Yapay zeka ile viral video yap: 30'dan fazla model, senaryo, kamera ve ışık tek tuvalde.",
     type: "website",
@@ -33,9 +34,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Buzzy Yapay Zeka Video Oluşturucu",
+    title: "Buzzy AI Yapay Zeka Video Oluşturucu",
     description:
-      "Metin veya görselden yapay zeka ile viral video yap — BuzzyAI.Video.",
+      "Metin veya görselden yapay zeka ile viral video yap — Buzzy AI Video.",
   },
 };
 
@@ -90,7 +91,7 @@ const steps = [
 
 const faqs = [
   {
-    q: "Buzzy yapay zeka video oluşturucu nedir?",
+    q: "Buzzy AI yapay zeka video oluşturucu nedir?",
     a: "BuzzyAI.Video içinde video üretmenin yoludur. Bir fikir yazarsın veya bir görsel yüklersin; platform tek tuvalde 30'dan fazla yapay zeka modeliyle bir klip oluşturur.",
   },
   {
@@ -128,12 +129,12 @@ export default function TrHomePage() {
       <section className={`${styles.hero} film-grain`}>
         <div className={styles.glow} />
         <div className={`container ${styles.heroInner}`}>
-          <span className="eyebrow">Buzzy · Yapay Zeka Video Oluşturucu</span>
+          <span className="eyebrow">Buzzy AI · Yapay Zeka Video Oluşturucu</span>
           <h1 className={styles.title}>
-            Viral videoları <span className="gold">Buzzy</span> ile oluştur
+            Viral videoları <span className="gold">Buzzy AI</span> ile oluştur
           </h1>
           <p className={styles.sub}>
-            Buzzy yapay zeka video oluşturucu her şeyi tek yerde yapar: bir fikir
+            Buzzy AI yapay zeka video oluşturucu her şeyi tek yerde yapar: bir fikir
             yaz, 30'dan fazla yapay zeka modelinden birini seç ve kamera, ışık ve
             sesle klip üret. Zaman çizelgesi yok, karmaşıklık yok.
           </p>
@@ -171,7 +172,7 @@ export default function TrHomePage() {
             MAGI-2: <span className="gold">üst düzey kalite</span> çok daha az maliyetle
           </h2>
           <p className="section-sub">
-            Buzzy yapay zeka video oluşturucuda bulunan modellerden biri; çok sayıda
+            Buzzy AI yapay zeka video oluşturucuda bulunan modellerden biri; çok sayıda
             deneme yapman gerektiğinde ideal.
           </p>
           <ul className={styles.factList}>
@@ -204,7 +205,7 @@ export default function TrHomePage() {
         <div className="container">
           <span className="eyebrow">Sıkça sorulan sorular</span>
           <h2 className="section-title">
-            <span className="gold">Buzzy video oluşturucu</span> hakkında her şey
+            <span className="gold">Buzzy AI video oluşturucu</span> hakkında her şey
           </h2>
           <div className={styles.faq}>
             {faqs.map((f) => (
