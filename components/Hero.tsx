@@ -32,7 +32,7 @@ export default function Hero() {
           </div>
           <div className={styles.statDiv} />
           <div className={styles.stat}>
-            <strong>11+</strong>
+            <strong>30+</strong>
             <span>AI models</span>
           </div>
           <div className={styles.statDiv} />

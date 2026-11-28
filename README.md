@@ -12,7 +12,7 @@ consistent.
 | | |
 |---|---|
 | **3×3** | multi-cam grid |
-| **11+** | AI models |
+| **30+** | AI models |
 | **4K** | cinematic output |
 | **1** | consistent canvas |
 
@@ -30,7 +30,7 @@ built for directors.
 - Drop an image or prompt to generate a multi-cam shot grid
 - Track characters, props, and locations across scenes
 - Edit any shot and let the whole board update automatically
-- Render with 11+ models while keeping the same visual DNA
+- Render with 30+ models while keeping the same visual DNA
 
 ## Create with the latest models
 
@@ -52,6 +52,7 @@ place so you can pick the perfect engine for every shot.
 | Hailuo | Fast & expressive drafting |
 | Wan | Open-source SOTA video model |
 | Pixverse | Stylized & dynamic video |
+| **MAGI-2** *(Flagship)* | AA #1 image-to-video · native 30s 1080p with audio · ~1/10 the price of Seedance 2.5 |
 
 ## Director Canvas
 
@@ -64,7 +65,7 @@ and locations stay consistent.
 - Open any shot from the storyboard on the canvas
 - Drag the camera cube to set angle, tilt and motion
 - Tune key light, temperature and rim light in real time
-- Render with any of 11+ models and export 4K clips
+- Render with any of 30+ models and export 4K clips
 
 ## Showcase
 
@@ -131,7 +132,7 @@ moving image.
    and locked across every shot so nothing drifts between scenes.
 3. **Direct camera & light** — Open any shot in the Director Canvas, drag the
    camera cube, and tune key light to match the mood.
-4. **Render with any model** — Pick the best engine from 11+ models and export
+4. **Render with any model** — Pick the best engine from 30+ models and export
    consistent 4K clips, all from the same storyboard.
 
 ## FAQ
@@ -144,7 +145,9 @@ moving image.
 
 - **Can I use it without any filmmaking background?** — Yes. Every plan includes the Director Canvas with storyboard generation, multi-angle camera control and real-time relighting.
 
-- **Which AI models are supported?** — Starter includes core model access; Creator and Studio unlock all available models with a priority render queue on Creator and above.
+- **Which AI models are supported?** — We bring 30+ leading video and image models into one canvas: Seedance 2.0, Veo 3.1, Kling 2.5, Wan 2.7, MiniMax H3, Runway, Grok Imagine, MAGI-2, HappyHorse, Pixverse, Hailuo, Gemini Omni, GPT Image, Nano Banana, Seedream, Flux Kontext, Qwen and more. Starter includes core model access; Creator and Studio unlock all available models, with a priority render queue on Creator and above.
+
+- **What is MAGI-2 and why is it getting attention?** — MAGI-2 is Sand.ai's 480B-parameter video model, ranked #1 on the Artificial Analysis image-to-video leaderboard at launch. It generates native 4–30 second 1080p clips with synchronized audio in a single pass, accepts up to 20 mixed reference assets (images, video and audio), and supports prompts up to 20,000 characters for precise shot timing. Its published 1080p rate is about CNY 0.5 per second — roughly one tenth of Seedance 2.5 — so you can iterate far more clips for the same budget. Exact model availability depends on your plan.
 
 - **What video quality and output volume do I get?** — Starter: 720p video and 4K images, about 83 videos a month. Creator and Studio: 2K video and 4K images, about 150 and 250 videos a month respectively. Counts are estimates; no plan includes unlimited generations.
 

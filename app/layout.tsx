@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     template: "%s | BuzzyAI.Video",
   },
   description:
-    "BuzzyAI.Video is an AI video directing workspace: it aggregates Seedance, Kling, Runway, Veo and more into one canvas, with storyboard, multi-angle camera control and real-time relighting so anyone can direct 4K cinematic shorts, animations and music videos.",
+    "BuzzyAI.Video is an AI video directing workspace: it aggregates 30+ leading models including Seedance, Veo, Kling, Wan, Runway, Grok and more into one canvas, with storyboard, multi-angle camera control and real-time relighting so anyone can direct 4K cinematic shorts, animations and music videos.",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "BuzzyAI.Video - AI Video Director",
     description:
-      "BuzzyAI.Video aggregates Seedance, Kling, Runway and Veo, so you can direct a consistent 4K AI film from a single storyboard canvas.",
+      "BuzzyAI.Video aggregates 30+ leading video and image models, so you can direct a consistent 4K AI film from a single storyboard canvas.",
   },
 };
 

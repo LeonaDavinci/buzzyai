@@ -4,7 +4,7 @@ const points = [
   "Open any shot from the storyboard on the canvas",
   "Drag the camera cube to set angle, tilt and motion",
   "Tune key light, temperature and rim light in real time",
-  "Render with any of 11+ models and export 4K clips",
+  "Render with any of 30+ models and export 4K clips",
 ];
 
 export default function DirectorCanvas() {

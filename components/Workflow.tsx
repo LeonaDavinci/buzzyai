@@ -4,7 +4,7 @@ const steps = [
   { n: "1", t: "Drop a prompt or image", d: "Start with a single idea. The AI turns it into a detailed multi-cam storyboard, like a simplified ComfyUI node flow." },
   { n: "2", t: "Lock consistency", d: "Characters, objects, locations, and props are tagged and locked across every shot so nothing drifts between scenes." },
   { n: "3", t: "Direct camera & light", d: "Open any shot in the Director Canvas, drag the camera cube, and tune key light to match the mood." },
-  { n: "4", t: "Render with any model", d: "Pick the best engine from 11+ models and export consistent 4K clips, all from the same storyboard." },
+  { n: "4", t: "Render with any model", d: "Pick the best engine from 30+ models and export consistent 4K clips, all from the same storyboard." },
 ];
 
 export default function Workflow() {
