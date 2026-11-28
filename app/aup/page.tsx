@@ -243,13 +243,13 @@ const doc: LegalDoc = {
         {
           type: "bullets",
           items: [
-            "Dedicated safety & report email: buzzyai.llc@gmail.com (monitored; please include the content link or request ID, and a short description).",
-            "General support: buzzyai.llc@gmail.com.",
+            "Dedicated safety & report email: support@buzzyai.video (monitored; please include the content link or request ID, and a short description).",
+            "General support: support@buzzyai.video.",
           ],
         },
         {
           type: "callout",
-          text: "For critical violations involving child safety or terrorism, email buzzyai.llc@gmail.com with \"URGENT SAFETY REPORT\" in the subject line. These reports are prioritized ahead of all other queues.",
+          text: "For critical violations involving child safety or terrorism, email support@buzzyai.video with \"URGENT SAFETY REPORT\" in the subject line. These reports are prioritized ahead of all other queues.",
         },
       ],
     },
@@ -303,7 +303,7 @@ const doc: LegalDoc = {
         {
           type: "bullets",
           items: [
-            "Appeal channel: buzzyai.llc@gmail.com (include your account email and the decision reference).",
+            "Appeal channel: support@buzzyai.video (include your account email and the decision reference).",
             "Timeline: reviewed within 10 business days.",
             "Review method: reviewed by a reviewer independent of the original decision.",
           ],
@@ -329,8 +329,8 @@ const doc: LegalDoc = {
         {
           type: "bullets",
           items: [
-            "Safety & Reports: buzzyai.llc@gmail.com",
-            "Appeals: buzzyai.llc@gmail.com",
+            "Safety & Reports: support@buzzyai.video",
+            "Appeals: support@buzzyai.video",
             "Company Name: BuzzyAI.Video (operated as an individual / sole trader)",
             "Address: Not applicable — contact us via email for our current contact details.",
           ],
